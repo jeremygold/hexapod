@@ -97,19 +97,20 @@ module mountingHole(x, z) {
 }
 
 // Main routine
-difference() {
-	union() {
-		servoBody();
-		axleShroud();
-		gearShroud();
-		axle();
-	}
+module MiniServo() {
+	difference() {
+		union() {
+			servoBody();
+			axleShroud();
+			gearShroud();
+			axle();
+		}
 
-	union() {
-		mountingHole(mhX, mhY);
-		mountingHole(mhX, -mhY);
-		mountingHole(-mhX, mhY);
-		mountingHole(-mhX, -mhY);
+		union() {
+			mountingHole(mhX, mhY);
+			mountingHole(mhX, -mhY);
+			mountingHole(-mhX, mhY);
+			mountingHole(-mhX, -mhY);
+		}
 	}
 }
-
