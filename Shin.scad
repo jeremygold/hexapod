@@ -9,9 +9,10 @@ wallThicknessEitherSide = 2 * wallThickness;
 innerSizeTolerance = 0.2;
 differencePadding = 0.1;
 
-shinTopLength = mountingTabWidth + 5;
+shinTopLength = mountingTabWidth + wallThicknessEitherSide;
 shinBottomLength = 65;
 
+m6Radius = 6/2;
 
 footRadius = 5;
 footCutoutOffset = 20;
@@ -22,25 +23,64 @@ filletRadius = 2;
 
 cutoutHeight = servoDepth + wallThicknessEitherSide + differencePadding;
 
+module axleGearShroud() {
+	union() {
+		axleShroud();
+		gearShroud();
+	}
+}
+
+// Hole opposite axle that will be used for a pin that the thigh will rotate on
+module axleExtensionHole() {
+	translate([-axleXOffset, -(servoHeight / 2 + wallThickness / 2), 0]){
+		rotate([90,0,0]) {
+			cylinder(h=(wallThickness + differencePadding), r=m6Radius, center=true);
+			// TODO - Countersink
+		}
+	}
+}
+
 // Main Shin Top section
 module shinTopSection() {
+	union() {
 		difference(){
+			// Main cube to carve from
 			cube([shinTopLength,
 					servoHeight + wallThicknessEitherSide, 
 					servoDepth + wallThicknessEitherSide], center=true);
+
+			// Cut out inner material to leave space for servo
 			cube([shinTopLength + innerSizeTolerance, servoHeight + innerSizeTolerance, servoDepth + innerSizeTolerance], center=true);
 
-			translate([-wallThickness, wallThickness / 2, (servoDepth + wallThickness) / 2]) 
+			// Cut out top face so that Servo can slot into place
+			translate([-wallThickness / 2, wallThickness / 2, (servoDepth + wallThickness) / 2]) 
 				roundedCube(shinTopLength, servoHeight - wallThickness, wallThickness + differencePadding, filletRadius);
 
+			// Cutouts in base to minimise material required
 			for(xPos = [-shinTopLength / 4, shinTopLength / 4]) {
 				translate([xPos, 0, -(servoDepth + wallThickness) / 2]) 
 					roundedCube(shinTopLength / 3, servoHeight - wallThickness, wallThickness + differencePadding, filletRadius);
 			}
+
+			// Cutout slot for Axle and Gear Shroud 
+			hull() {
+				translate([0,0,(servoDepth + wallThicknessEitherSide) / 2]) axleAndGearShroud(wallThickness + differencePadding, servoHeight / 2);
+				axleAndGearShroud(wallThickness + differencePadding, servoHeight / 2);
+			}
+
+			// Cutout bolt holes
+			mountingBoltHoles(wallThickness + differencePadding, servoHeight / 2 + wallThickness / 2);
+
+			// Cutout bolt hole for pin opposite axle
+			# axleExtensionHole();
 		}
 
-	// TODO - Cutout for servo axle shroud
-	// TODO - Bolt holes for servo attachment
+		// Add solid wall in center for additional strength
+		translate([shinTopLength / 2, 0, 0])
+			cube([wallThickness, servoHeight + innerSizeTolerance, servoDepth + innerSizeTolerance], center=true);
+
+	}
+
 	// TODO - Countersunk bolt hole on side opposite axle
 }
 

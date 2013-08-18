@@ -23,7 +23,6 @@ axleHeight = 4.0;  // Above Shroud
 
 gearShroudXOffset = axleXOffset - 10.0;
 gearShroudDiameter = 4.6;
-gearShroudHeight = axleShroudHeight;
 
 // Rectangular pockets for mounting holes
 mountingHolePocketWidth = 7.7;
@@ -53,10 +52,20 @@ module servoBody() {
 	}
 }
 
-module axleShroud() {
-  translate([-axleXOffset, servoHeight / 2 + axleShroudHeight / 2, 0]){
-		rotate([90,0,0]) {
-			cylinder(axleShroudHeight, axleShroudDiameter/2, axleShroudDiameter/2,center=true);
+module axleAndGearShroud(height, yOffset) {
+	union() {
+		translate([-axleXOffset, yOffset + height / 2, 0]){
+			rotate([90,0,0]) {
+				cylinder(height, axleShroudDiameter/2, axleShroudDiameter/2,center=true);
+			}
+		}
+		translate([-gearShroudXOffset, yOffset+ height / 2, 0]){
+			union() {
+				rotate([90,0,0]) {
+					cylinder(height, gearShroudDiameter/2, gearShroudDiameter/2,center=true);
+				}
+				translate([-gearShroudDiameter/2,0,0]) cube([gearShroudDiameter, height, gearShroudDiameter], center=true);
+			}
 		}
 	}
 }
@@ -69,29 +78,32 @@ module axle() {
 	}
 }
 
+module mountingDetail() {
+	for(x = [-mhX, mhX]) {
+		for(z = [-mhY, mhY]) {
+			translate([x, servoHeight / 2 - mountingHolePocketHeight / 2, z]) {
+				union() {
+					// Rectangular pocket
+					cube([mountingHolePocketWidth, mountingHolePocketHeight, mountingHolePocketDepth], center=true);
 
-module gearShroud() {
-	translate([-gearShroudXOffset, servoHeight / 2 + gearShroudHeight / 2, 0]){
-	  union() {
-			rotate([90,0,0]) {
-				cylinder(gearShroudHeight, gearShroudDiameter/2, gearShroudDiameter/2,center=true);
+					// Actual mounting hole
+					rotate([90,0,0]) cylinder(mountingTabHeight * 2, mountingHoleDiameter / 2, mountingHoleDiameter / 2, center=true);
+
+					// Cutout to edge
+					translate([signum(x) * mountingHolePocketWidth / 2, 0, 0]) cube([mountingHolePocketWidth, mountingTabHeight * 2,mountingHoleCutoutWidth], center=true);
+				}
 			}
-			translate([-gearShroudDiameter/2,0,0]) cube([gearShroudDiameter, gearShroudHeight, gearShroudDiameter], center=true);
 		}
 	}
 }
 
-module mountingHole(x, z) {
-  translate([x, servoHeight / 2 - mountingHolePocketHeight / 2, z]) {
-	  union() {
-		  // Rectangular pocket
-			cube([mountingHolePocketWidth, mountingHolePocketHeight, mountingHolePocketDepth], center=true);
-
-			// Actual mounting hole
-			rotate([90,0,0]) cylinder(mountingTabHeight * 2, mountingHoleDiameter / 2, mountingHoleDiameter / 2, center=true);
-
-			// Cutout to edge
-			translate([signum(x) * mountingHolePocketWidth / 2, 0, 0]) cube([mountingHolePocketWidth, mountingTabHeight * 2,mountingHoleCutoutWidth], center=true);
+module mountingBoltHoles(height, yOffset) {
+	for(x = [-mhX, mhX]) {
+		for(z = [-mhY, mhY]) {
+			translate([x, yOffset, z]) {
+					// Actual mounting hole
+					rotate([90,0,0]) cylinder(height, mountingHoleDiameter / 2, mountingHoleDiameter / 2, center=true);
+			}
 		}
 	}
 }
@@ -101,16 +113,15 @@ module MiniServo() {
 	difference() {
 		union() {
 			servoBody();
-			axleShroud();
-			gearShroud();
+			axleAndGearShroud(axleShroudHeight, servoHeight / 2);
 			axle();
 		}
 
 		union() {
-			mountingHole(mhX, mhY);
-			mountingHole(mhX, -mhY);
-			mountingHole(-mhX, mhY);
-			mountingHole(-mhX, -mhY);
+			mountingDetail();
+			mountingBoltHoles(mountingTabHeight * 2, servoHeight / 2 - mountingHolePocketHeight / 2);
 		}
 	}
 }
+
+//MiniServo();
