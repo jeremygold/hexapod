@@ -22,7 +22,7 @@ axleDiameter = 6.0;
 axleHeight = 4.0;  // Above Shroud
 
 gearShroudXOffset = axleXOffset - 10.0;
-gearShroudDiameter = 4.6;
+gearShroudDiameter = 8.0;
 
 // Rectangular pockets for mounting holes
 mountingHolePocketWidth = 7.7;

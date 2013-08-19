@@ -6,13 +6,14 @@ $fn=40;
 wallThickness = 3;
 wallThicknessEitherSide = 2 * wallThickness;
 
-innerSizeTolerance = 0.2;
+innerSizeTolerance = 0.4;
 differencePadding = 0.1;
 
 shinTopLength = mountingTabWidth + wallThicknessEitherSide;
 shinBottomLength = 65;
 
-m6Radius = 6/2;
+m3Radius = 3.0/2;
+m3CskTopRadius = 6.0/2;
 
 footRadius = 5;
 footCutoutOffset = 20;
@@ -31,13 +32,19 @@ module axleGearShroud() {
 }
 
 // Hole opposite axle that will be used for a pin that the thigh will rotate on
-module axleExtensionHole() {
+module cutoutAxleExtensionHole() {
 	translate([-axleXOffset, -(servoHeight / 2 + wallThickness / 2), 0]){
 		rotate([90,0,0]) {
-			cylinder(h=(wallThickness + differencePadding), r=m6Radius, center=true);
+			cylinder(h=(wallThickness + differencePadding), r1=m3CskTopRadius, r2=m3Radius, center=true);
 			// TODO - Countersink
 		}
 	}
+}
+
+module cutoutCableExtensionHole() {
+	translate([-(shinTopLength / 2 - wallThickness / 2), 0, 0]) 
+		rotate([0,90,0])
+			roundedCube(12, 3, (wallThickness + differencePadding), 1);
 }
 
 // Main Shin Top section
@@ -50,11 +57,7 @@ module shinTopSection() {
 					servoDepth + wallThicknessEitherSide], center=true);
 
 			// Cut out inner material to leave space for servo
-			cube([shinTopLength + innerSizeTolerance, servoHeight + innerSizeTolerance, servoDepth + innerSizeTolerance], center=true);
-
-			// Cut out top face so that Servo can slot into place
-			translate([-wallThickness / 2, wallThickness / 2, (servoDepth + wallThickness) / 2]) 
-				roundedCube(shinTopLength, servoHeight - wallThickness, wallThickness + differencePadding, filletRadius);
+			translate([0, 0, wallThickness / 2]) roundedCube(shinTopLength + innerSizeTolerance - wallThicknessEitherSide, servoHeight + innerSizeTolerance, servoDepth + innerSizeTolerance + wallThickness, 2);
 
 			// Cutouts in base to minimise material required
 			for(xPos = [-shinTopLength / 4, shinTopLength / 4]) {
@@ -64,24 +67,20 @@ module shinTopSection() {
 
 			// Cutout slot for Axle and Gear Shroud 
 			hull() {
-				translate([0,0,(servoDepth + wallThicknessEitherSide) / 2]) axleAndGearShroud(wallThickness + differencePadding, servoHeight / 2);
-				axleAndGearShroud(wallThickness + differencePadding, servoHeight / 2);
+				translate([0,0,(servoDepth + wallThicknessEitherSide) / 2]) axleAndGearShroud(wallThickness + differencePadding * 2, servoHeight / 2 - differencePadding);
+				axleAndGearShroud(wallThickness + differencePadding * 2, servoHeight / 2 - differencePadding);
 			}
 
 			// Cutout bolt holes
 			mountingBoltHoles(wallThickness + differencePadding, servoHeight / 2 + wallThickness / 2);
 
 			// Cutout bolt hole for pin opposite axle
-			# axleExtensionHole();
+			cutoutAxleExtensionHole();
+
+			// Hole on top face for servo cable
+			cutoutCableExtensionHole();
 		}
-
-		// Add solid wall in center for additional strength
-		translate([shinTopLength / 2, 0, 0])
-			cube([wallThickness, servoHeight + innerSizeTolerance, servoDepth + innerSizeTolerance], center=true);
-
 	}
-
-	// TODO - Countersunk bolt hole on side opposite axle
 }
 
 // Shin bottom section down to foot
@@ -144,7 +143,7 @@ module shin() {
 	}
 }
 
-% MiniServo();
+//% MiniServo();
 
 shin();
 
