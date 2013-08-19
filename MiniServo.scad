@@ -97,12 +97,12 @@ module mountingDetail() {
 	}
 }
 
-module mountingBoltHoles(height, yOffset) {
+module mountingBoltHoles(height, yOffset, radius) {
 	for(x = [-mhX, mhX]) {
 		for(z = [-mhY, mhY]) {
 			translate([x, yOffset, z]) {
 					// Actual mounting hole
-					rotate([90,0,0]) cylinder(height, mountingHoleDiameter / 2, mountingHoleDiameter / 2, center=true);
+					rotate([90,0,0]) cylinder(height, r=radius, center=true);
 			}
 		}
 	}
@@ -119,7 +119,7 @@ module MiniServo() {
 
 		union() {
 			mountingDetail();
-			mountingBoltHoles(mountingTabHeight * 2, servoHeight / 2 - mountingHolePocketHeight / 2);
+			mountingBoltHoles(mountingTabHeight * 2, servoHeight / 2 - mountingHolePocketHeight / 2, mountingHoleDiameter / 2);
 		}
 	}
 }

@@ -72,7 +72,7 @@ module shinTopSection() {
 			}
 
 			// Cutout bolt holes
-			mountingBoltHoles(wallThickness + differencePadding, servoHeight / 2 + wallThickness / 2);
+			mountingBoltHoles(wallThickness + differencePadding, servoHeight / 2 + wallThickness / 2, m3Radius);
 
 			// Cutout bolt hole for pin opposite axle
 			cutoutAxleExtensionHole();
@@ -145,6 +145,6 @@ module shin() {
 
 //% MiniServo();
 
-shin();
+// shin();
 
 
