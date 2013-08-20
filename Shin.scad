@@ -1,4 +1,5 @@
 include <MiniServo.scad>
+include <utils.scad>
 
 $fn=40;
 
@@ -11,9 +12,6 @@ differencePadding = 0.1;
 
 shinTopLength = mountingTabWidth + wallThicknessEitherSide;
 shinBottomLength = 65;
-
-m3Radius = 3.0/2;
-m3CskTopRadius = 6.0/2;
 
 footRadius = 5;
 footCutoutOffset = 20;
@@ -32,11 +30,11 @@ module axleGearShroud() {
 }
 
 // Hole opposite axle that will be used for a pin that the thigh will rotate on
+
 module cutoutAxleExtensionHole() {
-	translate([-axleXOffset, -(servoHeight / 2 + wallThickness / 2), 0]){
+	translate([-axleXOffset, -(servoHeight / 2), 0]){
 		rotate([90,0,0]) {
-			cylinder(h=(wallThickness + differencePadding), r1=m3CskTopRadius, r2=m3Radius, center=true);
-			// TODO - Countersink
+			m3CskBolt(8);
 		}
 	}
 }
@@ -122,19 +120,6 @@ module shinBottomSection() {
 		}
 	}
 }
-
-
-// TODO - This should take a vector, and a "center" option so it can be easily re-used
-module roundedCube(_x,_y,_z,_r) {
-	hull() {
-		for(xPos = [-(_x/2-_r),(_x/2-_r)]) {
-			for(yPos = [-(_y/2-_r),(_y/2-_r)]) {
-				translate([xPos, yPos, -_z/2]) cylinder(h=_z,r=_r);
-			}
-		}
-	}
-}
-
 
 module shin() {
 	union() {
