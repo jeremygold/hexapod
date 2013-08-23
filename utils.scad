@@ -16,7 +16,7 @@ module roundedCube(_x,_y,_z,_r) {
 
 // TODO - Test that this results in correctly sized bolt
 module m3CskBolt(length) {
-	# union() {
+	union() {
 	// Countersunk section // TODO - how tall is the countersunk section
 		translate([0,0,m3CskHeadHeight / 2]) cylinder(h=m3CskHeadHeight, r1=m3CskTopRadius, r2=m3Radius, center=true);
 		translate([0,0,m3CskHeadHeight / 2 + length / 2]) cylinder(h=length, r=m3Radius, center=true);
