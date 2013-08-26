@@ -15,9 +15,11 @@ module thigh() {
 		thighMainBlock();
 		thighMainCutout();
 		thighTopCutouts();
+
+// TODO - Refactor out cutoutAxleHoles()
 		axleHole(0, -thighWidth / 2 + wallThickness, m3Radius);
 		axleHole(0, thighWidth / 2 - wallThickness, m8Radius);
-		# axleHole(-(thighLength - axleShroudDiameter), -thighWidth / 2 + wallThickness , m3Radius);
+		axleHole(-(thighLength - axleShroudDiameter), -thighWidth / 2 + wallThickness , m3Radius);
 		axleHole(-(thighLength - axleShroudDiameter), thighWidth / 2 - wallThickness, m8Radius);
 
 		cutoutServoSlot(0);
@@ -50,7 +52,7 @@ module thighMainCutout() {
 }
 
 module cutoutServoSlot(xOffset) {
-	# translate([xOffset, thighWidth / 2, 0])
+	translate([xOffset, thighWidth / 2, 0])
 		rotate([90,0,0]) {
 			hull() {
 				cylinder(h=wallThickness + differencePadding, r=4.0 + servoBarSpacing, center=true);
@@ -74,7 +76,7 @@ module thighTopCutouts() {
 	}
 }
 
-thigh();
+rotate([180,0,0]) thigh();
 
-% rotate([0,0,0]) translate([axleXOffset,0,0]) shin();
+% rotate([180,0,0]) translate([axleXOffset,0,0]) shin();
 
