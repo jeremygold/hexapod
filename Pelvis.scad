@@ -4,7 +4,7 @@ include <utils.scad>
 // TODO - HexapodDimensions.scad file for all top level dimensions?
 
 pelvisDepth = servoDepth * 2 - differencePadding;
-pelvisWidth = servoWidth + wallThicknessEitherSide - differencePadding; 
+pelvisWidth = servoHeight + wallThicknessEitherSide - differencePadding; 
 pelvisHeight = servoWidth + wallThicknessEitherSide - differencePadding;
 
 mountingBlockWidth = wallThicknessEitherSide + mountingTabHeight;
@@ -18,25 +18,42 @@ m3NutRadius = 6.1 / 2;
 m3NutHeight = 2.0 + innerSizeTolerance; 
 
 module pelvis() {
+	union() {
+		servoHolder();
+		rotate([0,180,90]) servoHolder();
+	}
+}
+
+module servoHolder() {
 	difference() {
 	  union() {
-			cube([pelvisWidth, pelvisHeight, pelvisDepth], center=true);
+			translate([-wallThickness / 2, 0, pelvisDepth / 4]) 
+				cube([pelvisWidth, pelvisHeight, pelvisDepth / 2], center=true);
 			mountingBlocks();
-			rotate([0,180,90]) mountingBlocks();
 		}
-
 		cutouts();
-		rotate([0,180,90]) cutouts();
 	}
 }
 
 module cutouts() {
-	union() {
-		cutoutPelvisCenter();
-		cutoutAxleShroud();
-		cutoutServoMountingWings();
-		cutoutBoltHoles();
-		cutoutAxleExtensionHole();
+	rotate([0, 180, 90]) {
+		union() {
+			cutoutPelvisCenter();
+			cutoutAxleShroud();
+			cutoutServoMountingWings();
+			cutoutBoltHoles();
+			cutoutAxleExtensionHole();
+		}
+	}
+}
+
+module mountingBlocks() {
+	for(y=[-1,1]) {
+		translate ([
+		  -(pelvisWidth / 2 - mountingBlockWidth / 2 + wallThickness / 2), 
+			y * (pelvisHeight / 2 + mountingBlockHeight / 2), 
+			mountingBlockDepth / 2]) 
+				cube([mountingBlockWidth, mountingBlockHeight, servoDepth], center=true);
 	}
 }
 
@@ -55,7 +72,6 @@ module mountingBoltHolesWithNuts(height, yOffset, radius) {
 					// Actual mounting hole
 					rotate([90,0,0]) cylinder(height, r=radius, center=true);
 					translate([0, -(height + m3NutHeight) / 2, 0]) rotate([90,0,0]) cylinder(m3NutHeight, r=m3NutRadius, center=true, $fn=6);
-
 			}
 		}
 	}
@@ -67,27 +83,17 @@ module cutoutBoltHoles() {
 }
 
 module cutoutServoMountingWings() {
-	translate([-(servoHeight / 2), 0, servoDepth / 2]) 
-		cube([mountingTabHeight + innerSizeTolerance, 
-				  mountingTabWidth + innerSizeTolerance, 
+	translate([0, (servoHeight / 2), -servoDepth / 2]) 
+		cube([mountingTabWidth + innerSizeTolerance, 
+				  mountingTabHeight + innerSizeTolerance, 
 					servoDepth + differencePadding], center=true);
-}
-
-module mountingBlocks() {
-	for(y=[-1,1]) {
-		translate ([
-		  -(pelvisWidth / 2 - mountingBlockWidth / 2), 
-			y * (pelvisHeight / 2 + mountingBlockHeight / 2), 
-			mountingBlockDepth / 2]) 
-				cube([mountingBlockWidth, mountingBlockHeight, servoDepth], center=true);
-	}
 }
 
 module cutoutPelvisCenter() {
 	union() {
-		translate([-servoAlignmentOffset,0,servoDepth / 2])
-			cube([servoHeight + innerSizeTolerance, 
-					servoWidth + innerSizeTolerance, 
+		translate([0, servoAlignmentOffset, -servoDepth / 2])
+			cube([servoWidth + innerSizeTolerance, 
+					servoHeight + innerSizeTolerance, 
 					servoDepth + differencePadding], center=true);
 	}
 }
