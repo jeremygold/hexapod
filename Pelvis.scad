@@ -11,6 +11,9 @@ mountingBlockWidth = wallThicknessEitherSide + mountingTabHeight;
 mountingBlockHeight = (mountingTabWidth - servoWidth) / 2;
 mountingBlockDepth = servoDepth;
 
+wireHoleWidth = 4.0;
+wireYOffset = 2.5;
+
 servoAlignmentOffset = (servoWidth - servoHeight) / 2;
 
 // 6.1 is outer diameter of a 5.5mm driver M3 nut
@@ -43,8 +46,14 @@ module cutouts() {
 			cutoutServoMountingWings();
 			cutoutBoltHoles();
 			cutoutAxleExtensionHole();
+			cutoutWireEscape();
 		}
 	}
+}
+
+module cutoutWireEscape() {
+	translate([-pelvisWidth / 2, -wireYOffset, -servoDepth * 2 / 3])
+		cube([wallThickness + differencePadding, wireHoleWidth, servoDepth * 2 / 3], center=true);
 }
 
 module mountingBlocks() {
@@ -114,7 +123,7 @@ module stackedServos() {
 
 pelvis();
 
-% stackedServos();
+// % stackedServos();
 
 
 
