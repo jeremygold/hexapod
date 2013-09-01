@@ -117,11 +117,12 @@ module cutoutAxleShroud() {
 module stackedServos() {
 	union () {
 		translate([0, servoAlignmentOffset, -servoDepth / 2]) MiniServo();
-		translate([-servoAlignmentOffset, 0, servoDepth / 2]) rotate([0,180,90]) MiniServo();
+		translate([-servoAlignmentOffset, 0, servoDepth / 2]) rotate([0,180,90]) MiniServo();
 	}
 }
 
-pelvis();
+// pelvis();
+mirror([0,0,1]) pelvis();
 
 // % stackedServos();
 

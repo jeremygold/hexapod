@@ -130,6 +130,6 @@ module shin() {
 
 //% MiniServo();
 
-// shin();
+mirror([0,1,0]) shin();
 
 
