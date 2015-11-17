@@ -1,7 +1,6 @@
+include <HexapodDimensions.scad>
 include <MiniServo.scad>
-include <Shin.scad> // TODO - Only needed for wallthickness at this stage
 include <utils.scad>
-// TODO - HexapodDimensions.scad file for all top level dimensions?
 
 pelvisDepth = servoDepth * 2 - differencePadding;
 pelvisWidth = servoHeight + wallThicknessEitherSide - differencePadding; 
@@ -120,11 +119,6 @@ module stackedServos() {
 		translate([-servoAlignmentOffset, 0, servoDepth / 2]) rotate([0,180,90]) MiniServo();
 	}
 }
-
-// pelvis();
-mirror([0,0,1]) pelvis();
-
-// % stackedServos();
 
 
 

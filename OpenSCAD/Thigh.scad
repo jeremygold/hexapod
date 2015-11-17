@@ -1,3 +1,4 @@
+include <HexapodDimensions.scad>
 include <Shin.scad>
 
 shinWidthClearance = 42.0; // Measured from top of axle shroud to outer surface of shin (with space for m3 washer on axle pin)
@@ -66,7 +67,7 @@ module axleHole(xOffset, yOffset, radius) {
 	// TODO - Update to appropriate radii either side
 	translate([xOffset, yOffset, 0])
 		rotate([90,0,0])
-			# cylinder(h=(wallThickness + differencePadding), r=radius, center=true);
+			cylinder(h=(wallThickness + differencePadding), r=radius, center=true);
 }
 
 module thighTopCutouts() {
@@ -75,9 +76,4 @@ module thighTopCutouts() {
 			roundedCube((thighLength / 3 + axleShroudDiameter / 2), thighWidth - 3 * wallThickness, wallThickness + differencePadding, 5);
 	}
 }
-
-//rotate([180,0,0]) thigh();
-mirror([0,1,0]) rotate([180,0,0]) thigh();
-
-% rotate([180,0,0]) translate([axleXOffset,0,0]) shin();
 

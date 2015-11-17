@@ -2,6 +2,7 @@
 *.stl
 *.gcode
 .DS_Store
+*.swp
 
 ConceptArt/ikRender/*.png
 ConceptArt/ikRenderWalk/*.png

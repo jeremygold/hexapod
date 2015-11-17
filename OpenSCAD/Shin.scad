@@ -1,14 +1,8 @@
+include <HexapodDimensions.scad>
 include <MiniServo.scad>
 include <utils.scad>
 
 $fn=40;
-
-// All dimensions in mm
-wallThickness = 3;
-wallThicknessEitherSide = 2 * wallThickness;
-
-innerSizeTolerance = 0.4;
-differencePadding = 0.1;
 
 shinTopLength = mountingTabWidth + wallThicknessEitherSide;
 shinBottomLength = 65;
@@ -127,9 +121,4 @@ module shin() {
 		shinBottomSection();
 	}
 }
-
-//% MiniServo();
-
-mirror([0,1,0]) shin();
-
 
