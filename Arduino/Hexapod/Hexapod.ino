@@ -9,7 +9,7 @@ Servo shoulderV_LF;
 Servo shoulderH_LF;
  
 int pos = 0;
-int speed_delay=10;
+int speed_delay=50;
 
 const int GAIT_PAUSE = 200;
 
@@ -20,13 +20,13 @@ const int FWD_BACK_MAX = 110;
  
 void setup()
 {
-  shoulderH_RF.attach(0);
-  shoulderV_RF.attach(1);
-  elbow_RF.attach(2);
+  shoulderH_RF.attach(3);
+  shoulderV_RF.attach(5);
+  elbow_RF.attach(6);
 
-  shoulderH_LF.attach(3);
-  shoulderV_LF.attach(4);
-  elbow_LF.attach(5);
+  shoulderH_LF.attach(9);
+  shoulderV_LF.attach(10);
+  elbow_LF.attach(11);
 } 
 
 void moveRF(int up_down_pos, int fwd_back_pos) {
