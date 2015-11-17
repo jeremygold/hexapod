@@ -1,6 +1,7 @@
 *.blend?
 *.stl
 *.gcode
+.DS_Store
 
 ConceptArt/ikRender/*.png
 ConceptArt/ikRenderWalk/*.png
