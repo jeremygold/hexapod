@@ -1,22 +1,29 @@
 #include <Servo.h>
 
-Servo myservo;  // create servo object to control a servo
-// twelve servo objects can be created on most boards
+Servo pitch_servo;
+Servo shin_servo;
 
-int pos = 0;    // variable to store the servo position
+int pos = 0;    
+int min_pos = 30;
+int max_pos = 110;
+int delay_ms = 20;
+int shin_offset = 70;
 
 void setup() {
-  myservo.attach(9);  // attaches the servo on pin 9 to the servo object
+  pitch_servo.attach(6);  
+  shin_servo.attach(5);
 }
 
 void loop() {
-  for (pos = 0; pos <= 180; pos += 180) { // goes from 0 degrees to 180 degrees
+  for (pos = min_pos; pos <= max_pos; pos += 1) { 
     // in steps of 1 degree
-    myservo.write(pos);              // tell servo to go to position in variable 'pos'
-    delay(500);                       // waits 15ms for the servo to reach the position
+    pitch_servo.write(pos);             
+    shin_servo.write(pos+shin_offset);
+    delay(delay_ms);                       
   }
-  for (pos = 180; pos >= 0; pos -= 180) { // goes from 180 degrees to 0 degrees
-    myservo.write(pos);              // tell servo to go to position in variable 'pos'
-    delay(500);                       // waits 15ms for the servo to reach the position
+  for (pos = max_pos; pos >= min_pos; pos -= 1) { 
+    pitch_servo.write(pos);              
+    shin_servo.write(pos+shin_offset);
+    delay(delay_ms);                       
   }
 }
