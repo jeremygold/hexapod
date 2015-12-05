@@ -1,0 +1,4 @@
+Leg: 260g
+Body (Top and Bottom, 3mm acrylic): 235g
+BatteryPack: 225g
+RPI + 3D printed case: 80g
