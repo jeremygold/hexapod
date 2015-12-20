@@ -8,6 +8,7 @@ const int MOVE_ANGLE = 90;
 const int MOVE_MIN = CENTER_POS - (MOVE_ANGLE / 2);
 const int MOVE_MAX = CENTER_POS + (MOVE_ANGLE / 2);
 const int SPEED_DELAY = 5;
+const int STEP = 1;
 
 const int PULLUP_PIN = 8; // Using this pin to generate 5V to pullup when switch is pressed
 const int INPUT_PIN = 10;
@@ -22,27 +23,31 @@ void setup() {
   pinMode(INPUT_PIN, INPUT);
 }
 
+void move(int start, int end) {
+    if(end > start) {
+        for(pos = start; pos <= end; pos += STEP)  {                                 
+            testServo.write(pos);    
+            delay(SPEED_DELAY);                       
+        }
+    } else if(start > end) {
+        for(pos = start; pos >= end; pos -= STEP)  {                                 
+            testServo.write(pos);    
+            delay(SPEED_DELAY);                       
+        }
+    } else {
+        // start == end - No action
+    }
+}
+
 void moveServo() {
-  for(pos = CENTER_POS; pos <= MOVE_MAX; pos += 1)  
-  {                                 
-    testServo.write(pos);    
-    delay(SPEED_DELAY);                       
-  }
-  delay(500);
+    move(CENTER_POS, MOVE_MAX);
+    delay(500);
 
-  for(pos = MOVE_MAX; pos >= MOVE_MIN; pos -= 1)     
-  {                                
-    testServo.write(pos);    
-    delay(SPEED_DELAY);                       
-  } 
-  delay(500);
+    move(MOVE_MAX, MOVE_MIN);
+    delay(500);
 
-
-  for(pos = MOVE_MIN; pos <= CENTER_POS; pos += 1)  
-  {                                 
-    testServo.write(pos);    
-    delay(SPEED_DELAY);                       
-  }
+    move(MOVE_MIN, CENTER_POS);
+    delay(500);
 }
 
 void loop() {
