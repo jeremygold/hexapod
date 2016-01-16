@@ -7,10 +7,10 @@ from numpy import arange
 
 HIP_MIN = -pi / 6
 HIP_MAX = pi / 6
-HIP_STEP = pi / 16
+HIP_STEP = pi / 256
 THIGH_MIN = -pi / 4
 THIGH_MAX = pi / 4
-THIGH_STEP = pi / 16
+THIGH_STEP = pi / 256 
 
 limit = 2.5 * pi / 8
 front_right = Leg(6, 7, 8, Side.right)
