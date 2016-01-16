@@ -22,6 +22,14 @@ frontRightHip = 6
 frontRightThigh = 7
 frontRightShin = 8
  
+midLeftShin = 0
+midLeftThigh = 1
+midLeftHip = 2
+
+midRightHip = 9
+midRightThigh = 10
+midRightShin = 11
+
 def pwm(pin, angle):
   # Compensate for 1000 - 2000us representing +/- 90 degrees, and ServoBlaster is in units of 10us
   pwmDelay = 150 + ((angle - 90) * 50 / 90)
@@ -47,7 +55,7 @@ def moveTest(motor, side):
       pwm(motor,180-j)
     time.sleep(DELAY)
 
-  time.sleep(1)
+  # time.sleep(1)
 
 def legUp():
   for j in range(MIN, MAX, STEP):
@@ -79,11 +87,7 @@ def legBack():
     pwm(frontRightHip,(MAX - j) + MIN)
     time.sleep(DELAY)
 
-while True:
-  # legUp()
-  # legForward()
-  # legDown()
-  # legBack()
+def moveCenterFront():
   moveCenter(frontLeftShin)
   moveCenter(frontLeftThigh)
   moveCenter(frontLeftHip)
@@ -91,8 +95,17 @@ while True:
   moveCenter(frontRightShin)
   moveCenter(frontRightThigh)
   moveCenter(frontRightHip)
-  time.sleep(1)
 
+def moveCenterMid():
+  moveCenter(midLeftShin)
+  moveCenter(midLeftThigh)
+  moveCenter(midLeftHip)
+
+  moveCenter(midRightShin)
+  moveCenter(midRightThigh)
+  moveCenter(midRightHip)
+
+def moveTestFront():
   moveTest(frontLeftShin, LEFT)
   moveTest(frontLeftThigh, LEFT)
   moveTest(frontLeftHip, LEFT)
@@ -100,5 +113,31 @@ while True:
   moveTest(frontRightShin, RIGHT)
   moveTest(frontRightThigh, RIGHT)
   moveTest(frontRightHip, RIGHT)
-  time.sleep(1)
 
+def moveTestMid():
+  moveTest(midLeftShin, LEFT)
+  moveTest(midLeftThigh, LEFT)
+  moveTest(midLeftHip, LEFT)
+
+  moveTest(midRightShin, RIGHT)
+  moveTest(midRightThigh, RIGHT)
+  moveTest(midRightHip, RIGHT)
+
+keepGoing = True
+while keepGoing:
+  try:
+    # legUp()
+    # legForward()
+    # legDown()
+    # legBack()
+  
+    moveCenterFront()
+    moveCenterMid()
+
+    moveTestFront()
+    moveTestMid()
+  except KeyboardInterrupt:
+    keepGoing = False
+    moveCenterFront()
+    moveCenterMid()
+    
