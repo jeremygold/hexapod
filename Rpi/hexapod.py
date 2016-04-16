@@ -134,8 +134,9 @@ while keepGoing:
     moveCenterFront()
     moveCenterMid()
 
-    moveTestFront()
-    moveTestMid()
+    # moveTestFront()
+    # moveTestMid()
+
   except KeyboardInterrupt:
     keepGoing = False
     moveCenterFront()

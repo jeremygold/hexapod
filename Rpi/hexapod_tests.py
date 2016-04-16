@@ -7,10 +7,11 @@ from numpy import arange
 
 HIP_MIN = -pi / 6
 HIP_MAX = pi / 6
-HIP_STEP = pi / 256
+HIP_STEP = pi / 128
 THIGH_MIN = -pi / 4
 THIGH_MAX = pi / 4
-THIGH_STEP = pi / 256 
+THIGH_STEP = pi / 128 
+NUM_STEPS = 5
 
 limit = 2.5 * pi / 8
 front_right = Leg(6, 7, 8, Side.right)
@@ -134,10 +135,10 @@ def walk_back():
 
 def walk_test():
     left_init()
-    for i in range(0, 1):
+    for i in range(0, NUM_STEPS):
         walk_forward()
 
-    for i in range(0, 1):
+    for i in range(0, NUM_STEPS):
         walk_back()
     right_reset()
 
