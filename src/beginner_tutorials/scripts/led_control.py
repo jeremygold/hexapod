@@ -3,12 +3,16 @@
 import rospy
 from std_msgs.msg import String
 from flask import Flask
+from flask import render_template
 
 app = Flask(__name__)
 
 pub = rospy.Publisher('command', String, queue_size=10)
-
 led_state = "low"
+
+@app.route('/index/')
+def index():
+    return render_template('index.html')
 
 @app.route("/on")
 def turnOn():
@@ -40,4 +44,4 @@ def initRospy():
 
 if __name__ == '__main__':
     initRospy()
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0')

@@ -1,0 +1,27 @@
+<!doctype html>
+<head>
+<script type="text/javascript" src="{{ url_for('static', filename='jquery-2.2.3.js')}}"></script>
+<script>
+    function turnLedOn() {
+        $.get("/on", function(data) {
+            $('#led_State').html(data);
+        });
+    }
+
+    function turnLedOff() {
+        $.get("/off", function(data) {
+            $('#led_State').html(data);
+        });
+    }
+</script>
+
+</head>
+<body>
+<title>ROS LED Control</title>
+<h1>ROS LED Control</h1>
+<button onclick="turnLedOn()">Turn LED ON</button>
+<button onclick="turnLedOff()">Turn LED OFF</button>
+<div id="led_state"></div>
+</body>
+
+
