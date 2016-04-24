@@ -15,24 +15,12 @@ led_state = "low"
 def index():
     return render_template('index.html')
 
-@app.route("/on")
-def turnOn():
-    rospy.loginfo("Turning LED on")
-    pub.publish(250)
-    return "LED on"
-
-@app.route("/off")
-def turnOff():
-    rospy.loginfo("Turning LED off")
-    pub.publish(50)
-    return "LED off"
-
 @app.route("/set")
 def setValue():
     value = int(request.args.get("value"))
-    rospy.loginfo("Setting LED value to {0:d}".format(value))
+    rospy.loginfo("Setting PWM value to {0:d}".format(value))
     pub.publish(value)
-    return "LED value {0:d}".format(value)
+    return "PWM value {0:d}".format(value)
 
 
 def initRospy():

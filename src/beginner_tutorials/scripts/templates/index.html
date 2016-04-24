@@ -1,35 +1,38 @@
 <!doctype html>
 <head>
 <script type="text/javascript" src="{{ url_for('static', filename='jquery-2.2.3.js')}}"></script>
+
 <script>
-    function turnLedOn() {
-        $.get("/set?value=249", function(data) {
-            $('#led_State').html(data);
+    function openEye() {
+        $.get("/set?value=180", function(data) {
+            $('#eye_state').html(data);
         });
     }
 
-    function turnLedOff() {
-        $.get("/set?value=51", function(data) {
-            $('#led_State').html(data);
+    function closeEye() {
+        $.get("/set?value=150", function(data) {
+            $('#eye_state').html(data);
         });
     }
     
-    //$("#value_slider").on("change", function() {
-        //$.get("/val", function(data) {
-            //$('#led_State').html(data);
-        //});
-    //});
+    $(document).ready(function() {
+        $("#value_slider").on("input", function() {
+            $.get("/set?value="+ this.value, function(data) {
+                $('#eye_state').html(data);
+            });
+        });
+    });
 
 </script>
 
 </head>
 <body>
-<title>ROS LED Control</title>
-<h1>ROS LED Control</h1>
-<button onclick="turnLedOn()">Turn LED ON</button>
-<button onclick="turnLedOff()">Turn LED OFF</button>
-<input type="range" id="value_slider" value="100" min="50" max="250"></input>
-<div id="led_state"></div>
+<title>ROS PWM Control</title>
+<h1>ROS PWM Control</h1>
+<button onclick="openEye()">Open Eye</button>
+<button onclick="closeEye()">Close Eye</button>
+<input type="range" id="value_slider" value="150" min="150" max="180"></input>
+<div id="eye_state"></div>
 </body>
 
 
