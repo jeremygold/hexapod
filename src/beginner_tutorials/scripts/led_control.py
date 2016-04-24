@@ -2,12 +2,12 @@
 
 import rospy
 from std_msgs.msg import Int16
+
 from flask import Flask
 from flask import render_template
 from flask import request
 
 app = Flask(__name__)
-pub = rospy.Publisher('command', Int16, queue_size=10)
 
 @app.route('/')
 def index():
@@ -20,11 +20,12 @@ def setValue():
     pub.publish(value)
     return "PWM value {0:d}".format(value)
 
-
 def initRospy():
+    global pub
     rospy.init_node('led_control', anonymous=True)
+    pub = rospy.Publisher('command', Int16, queue_size=10)
 
 if __name__ == '__main__':
     initRospy()
     print "Starting webserver"
-    app.run(debug=True, host='0.0.0.0')
+    app.run(debug=True, host='0.0.0.0', use_reloader=False)
