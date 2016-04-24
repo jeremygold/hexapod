@@ -1,0 +1,17 @@
+/mnt/hgfs/pub/research/ros/PubSubToRpi/build/CMakeFiles/clean_test_results.dir
+/mnt/hgfs/pub/research/ros/PubSubToRpi/build/CMakeFiles/clean_test_results_Project.dir
+/mnt/hgfs/pub/research/ros/PubSubToRpi/build/CMakeFiles/download_extra_data.dir
+/mnt/hgfs/pub/research/ros/PubSubToRpi/build/CMakeFiles/doxygen.dir
+/mnt/hgfs/pub/research/ros/PubSubToRpi/build/gtest/CMakeFiles/gtest.dir
+/mnt/hgfs/pub/research/ros/PubSubToRpi/build/gtest/CMakeFiles/gtest_main.dir
+/mnt/hgfs/pub/research/ros/PubSubToRpi/build/beginner_tutorials/CMakeFiles/roscpp_generate_messages_cpp.dir
+/mnt/hgfs/pub/research/ros/PubSubToRpi/build/beginner_tutorials/CMakeFiles/roscpp_generate_messages_lisp.dir
+/mnt/hgfs/pub/research/ros/PubSubToRpi/build/beginner_tutorials/CMakeFiles/roscpp_generate_messages_py.dir
+/mnt/hgfs/pub/research/ros/PubSubToRpi/build/beginner_tutorials/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir
+/mnt/hgfs/pub/research/ros/PubSubToRpi/build/beginner_tutorials/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir
+/mnt/hgfs/pub/research/ros/PubSubToRpi/build/beginner_tutorials/CMakeFiles/rosgraph_msgs_generate_messages_py.dir
+/mnt/hgfs/pub/research/ros/PubSubToRpi/build/CMakeFiles/run_tests.dir
+/mnt/hgfs/pub/research/ros/PubSubToRpi/build/beginner_tutorials/CMakeFiles/std_msgs_generate_messages_cpp.dir
+/mnt/hgfs/pub/research/ros/PubSubToRpi/build/beginner_tutorials/CMakeFiles/std_msgs_generate_messages_lisp.dir
+/mnt/hgfs/pub/research/ros/PubSubToRpi/build/beginner_tutorials/CMakeFiles/std_msgs_generate_messages_py.dir
+/mnt/hgfs/pub/research/ros/PubSubToRpi/build/CMakeFiles/tests.dir
