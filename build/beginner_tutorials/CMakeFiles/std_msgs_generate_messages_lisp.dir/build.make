@@ -35,7 +35,7 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/hgfs/pub/research/ros/PubSubToRpi/src
+CMAKE_SOURCE_DIR = /pub/research/ros/PubSubToRpi/src
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /mnt/hgfs/pub/research/ros/PubSubToRpi/build
@@ -60,6 +60,6 @@ beginner_tutorials/CMakeFiles/std_msgs_generate_messages_lisp.dir/clean:
 .PHONY : beginner_tutorials/CMakeFiles/std_msgs_generate_messages_lisp.dir/clean
 
 beginner_tutorials/CMakeFiles/std_msgs_generate_messages_lisp.dir/depend:
-	cd /mnt/hgfs/pub/research/ros/PubSubToRpi/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/hgfs/pub/research/ros/PubSubToRpi/src /mnt/hgfs/pub/research/ros/PubSubToRpi/src/beginner_tutorials /mnt/hgfs/pub/research/ros/PubSubToRpi/build /mnt/hgfs/pub/research/ros/PubSubToRpi/build/beginner_tutorials /mnt/hgfs/pub/research/ros/PubSubToRpi/build/beginner_tutorials/CMakeFiles/std_msgs_generate_messages_lisp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /mnt/hgfs/pub/research/ros/PubSubToRpi/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /pub/research/ros/PubSubToRpi/src /pub/research/ros/PubSubToRpi/src/beginner_tutorials /mnt/hgfs/pub/research/ros/PubSubToRpi/build /mnt/hgfs/pub/research/ros/PubSubToRpi/build/beginner_tutorials /mnt/hgfs/pub/research/ros/PubSubToRpi/build/beginner_tutorials/CMakeFiles/std_msgs_generate_messages_lisp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : beginner_tutorials/CMakeFiles/std_msgs_generate_messages_lisp.dir/depend
 

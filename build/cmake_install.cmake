@@ -1,8 +1,8 @@
-# Install script for directory: /mnt/hgfs/pub/research/ros/PubSubToRpi/src
+# Install script for directory: /pub/research/ros/PubSubToRpi/src
 
 # Set the install prefix
 IF(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  SET(CMAKE_INSTALL_PREFIX "/mnt/hgfs/pub/research/ros/PubSubToRpi/install")
+  SET(CMAKE_INSTALL_PREFIX "/pub/research/ros/PubSubToRpi/install")
 ENDIF(NOT DEFINED CMAKE_INSTALL_PREFIX)
 STRING(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -44,74 +44,74 @@ ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unsp
 
 IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/mnt/hgfs/pub/research/ros/PubSubToRpi/install/_setup_util.py")
+   "/pub/research/ros/PubSubToRpi/install/_setup_util.py")
   IF (CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   ENDIF (CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
   IF (CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   ENDIF (CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
-FILE(INSTALL DESTINATION "/mnt/hgfs/pub/research/ros/PubSubToRpi/install" TYPE PROGRAM FILES "/mnt/hgfs/pub/research/ros/PubSubToRpi/build/catkin_generated/installspace/_setup_util.py")
+FILE(INSTALL DESTINATION "/pub/research/ros/PubSubToRpi/install" TYPE PROGRAM FILES "/mnt/hgfs/pub/research/ros/PubSubToRpi/build/catkin_generated/installspace/_setup_util.py")
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
 
 IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/mnt/hgfs/pub/research/ros/PubSubToRpi/install/env.sh")
+   "/pub/research/ros/PubSubToRpi/install/env.sh")
   IF (CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   ENDIF (CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
   IF (CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   ENDIF (CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
-FILE(INSTALL DESTINATION "/mnt/hgfs/pub/research/ros/PubSubToRpi/install" TYPE PROGRAM FILES "/mnt/hgfs/pub/research/ros/PubSubToRpi/build/catkin_generated/installspace/env.sh")
+FILE(INSTALL DESTINATION "/pub/research/ros/PubSubToRpi/install" TYPE PROGRAM FILES "/mnt/hgfs/pub/research/ros/PubSubToRpi/build/catkin_generated/installspace/env.sh")
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
 
 IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/mnt/hgfs/pub/research/ros/PubSubToRpi/install/setup.bash")
+   "/pub/research/ros/PubSubToRpi/install/setup.bash")
   IF (CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   ENDIF (CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
   IF (CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   ENDIF (CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
-FILE(INSTALL DESTINATION "/mnt/hgfs/pub/research/ros/PubSubToRpi/install" TYPE FILE FILES "/mnt/hgfs/pub/research/ros/PubSubToRpi/build/catkin_generated/installspace/setup.bash")
+FILE(INSTALL DESTINATION "/pub/research/ros/PubSubToRpi/install" TYPE FILE FILES "/mnt/hgfs/pub/research/ros/PubSubToRpi/build/catkin_generated/installspace/setup.bash")
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
 
 IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/mnt/hgfs/pub/research/ros/PubSubToRpi/install/setup.sh")
+   "/pub/research/ros/PubSubToRpi/install/setup.sh")
   IF (CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   ENDIF (CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
   IF (CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   ENDIF (CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
-FILE(INSTALL DESTINATION "/mnt/hgfs/pub/research/ros/PubSubToRpi/install" TYPE FILE FILES "/mnt/hgfs/pub/research/ros/PubSubToRpi/build/catkin_generated/installspace/setup.sh")
+FILE(INSTALL DESTINATION "/pub/research/ros/PubSubToRpi/install" TYPE FILE FILES "/mnt/hgfs/pub/research/ros/PubSubToRpi/build/catkin_generated/installspace/setup.sh")
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
 
 IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/mnt/hgfs/pub/research/ros/PubSubToRpi/install/setup.zsh")
+   "/pub/research/ros/PubSubToRpi/install/setup.zsh")
   IF (CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   ENDIF (CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
   IF (CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   ENDIF (CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
-FILE(INSTALL DESTINATION "/mnt/hgfs/pub/research/ros/PubSubToRpi/install" TYPE FILE FILES "/mnt/hgfs/pub/research/ros/PubSubToRpi/build/catkin_generated/installspace/setup.zsh")
+FILE(INSTALL DESTINATION "/pub/research/ros/PubSubToRpi/install" TYPE FILE FILES "/mnt/hgfs/pub/research/ros/PubSubToRpi/build/catkin_generated/installspace/setup.zsh")
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
 
 IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/mnt/hgfs/pub/research/ros/PubSubToRpi/install/.rosinstall")
+   "/pub/research/ros/PubSubToRpi/install/.rosinstall")
   IF (CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   ENDIF (CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
   IF (CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   ENDIF (CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
-FILE(INSTALL DESTINATION "/mnt/hgfs/pub/research/ros/PubSubToRpi/install" TYPE FILE FILES "/mnt/hgfs/pub/research/ros/PubSubToRpi/build/catkin_generated/installspace/.rosinstall")
+FILE(INSTALL DESTINATION "/pub/research/ros/PubSubToRpi/install" TYPE FILE FILES "/mnt/hgfs/pub/research/ros/PubSubToRpi/build/catkin_generated/installspace/.rosinstall")
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
 
 IF(NOT CMAKE_INSTALL_LOCAL_ONLY)

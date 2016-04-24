@@ -1,2 +1,2 @@
 beginner_tutorials
--DCATKIN_DEVEL_PREFIX=/mnt/hgfs/pub/research/ros/PubSubToRpi/devel -DCMAKE_INSTALL_PREFIX=/mnt/hgfs/pub/research/ros/PubSubToRpi/install -G Unix Makefiles
+-DCATKIN_DEVEL_PREFIX=/pub/research/ros/PubSubToRpi/devel -DCMAKE_INSTALL_PREFIX=/pub/research/ros/PubSubToRpi/install -G Unix Makefiles

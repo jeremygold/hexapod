@@ -35,7 +35,7 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/hgfs/pub/research/ros/PubSubToRpi/src
+CMAKE_SOURCE_DIR = /pub/research/ros/PubSubToRpi/src
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /mnt/hgfs/pub/research/ros/PubSubToRpi/build
@@ -60,6 +60,6 @@ CMakeFiles/run_tests.dir/clean:
 .PHONY : CMakeFiles/run_tests.dir/clean
 
 CMakeFiles/run_tests.dir/depend:
-	cd /mnt/hgfs/pub/research/ros/PubSubToRpi/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/hgfs/pub/research/ros/PubSubToRpi/src /mnt/hgfs/pub/research/ros/PubSubToRpi/src /mnt/hgfs/pub/research/ros/PubSubToRpi/build /mnt/hgfs/pub/research/ros/PubSubToRpi/build /mnt/hgfs/pub/research/ros/PubSubToRpi/build/CMakeFiles/run_tests.dir/DependInfo.cmake --color=$(COLOR)
+	cd /mnt/hgfs/pub/research/ros/PubSubToRpi/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /pub/research/ros/PubSubToRpi/src /pub/research/ros/PubSubToRpi/src /mnt/hgfs/pub/research/ros/PubSubToRpi/build /mnt/hgfs/pub/research/ros/PubSubToRpi/build /mnt/hgfs/pub/research/ros/PubSubToRpi/build/CMakeFiles/run_tests.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/run_tests.dir/depend
 

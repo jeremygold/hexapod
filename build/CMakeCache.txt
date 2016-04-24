@@ -21,7 +21,7 @@ BUILD_SHARED_LIBS:BOOL=ON
 CATKIN_BLACKLIST_PACKAGES:STRING=
 
 //catkin devel space
-CATKIN_DEVEL_PREFIX:PATH=/mnt/hgfs/pub/research/ros/PubSubToRpi/devel
+CATKIN_DEVEL_PREFIX:PATH=/pub/research/ros/PubSubToRpi/devel
 
 //Catkin enable testing
 CATKIN_ENABLE_TESTING:BOOL=ON
@@ -101,7 +101,7 @@ CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 CMAKE_EXPORT_COMPILE_COMMANDS:BOOL=OFF
 
 //Install path prefix, prepended onto install directories.
-CMAKE_INSTALL_PREFIX:PATH=/mnt/hgfs/pub/research/ros/PubSubToRpi/install
+CMAKE_INSTALL_PREFIX:PATH=/pub/research/ros/PubSubToRpi/install
 
 //Path to a program.
 CMAKE_LINKER:FILEPATH=/usr/bin/ld
@@ -231,7 +231,7 @@ PYTHON_VERSION:STRING=
 Project_BINARY_DIR:STATIC=/mnt/hgfs/pub/research/ros/PubSubToRpi/build
 
 //Value Computed by CMake
-Project_SOURCE_DIR:STATIC=/mnt/hgfs/pub/research/ros/PubSubToRpi/src
+Project_SOURCE_DIR:STATIC=/pub/research/ros/PubSubToRpi/src
 
 //Path to a library.
 RT_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/librt.so
@@ -255,7 +255,7 @@ _CATKIN_GTEST_SRC:FILEPATH=/usr/src/gtest/src/gtest.cc
 beginner_tutorials_BINARY_DIR:STATIC=/mnt/hgfs/pub/research/ros/PubSubToRpi/build/beginner_tutorials
 
 //Value Computed by CMake
-beginner_tutorials_SOURCE_DIR:STATIC=/mnt/hgfs/pub/research/ros/PubSubToRpi/src/beginner_tutorials
+beginner_tutorials_SOURCE_DIR:STATIC=/pub/research/ros/PubSubToRpi/src/beginner_tutorials
 
 //The directory containing a CMake configuration file for catkin.
 catkin_DIR:PATH=/opt/ros/indigo/share/catkin/cmake

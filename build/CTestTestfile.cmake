@@ -1,5 +1,5 @@
 # CMake generated Testfile for 
-# Source directory: /mnt/hgfs/pub/research/ros/PubSubToRpi/src
+# Source directory: /pub/research/ros/PubSubToRpi/src
 # Build directory: /mnt/hgfs/pub/research/ros/PubSubToRpi/build
 # 
 # This file includes the relevant testing commands required for 

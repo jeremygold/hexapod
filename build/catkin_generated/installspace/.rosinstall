@@ -1,2 +1,2 @@
 - setup-file:
-    local-name: /mnt/hgfs/pub/research/ros/PubSubToRpi/install/setup.sh
+    local-name: /pub/research/ros/PubSubToRpi/install/setup.sh
