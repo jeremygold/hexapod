@@ -7,9 +7,7 @@ from flask import render_template
 from flask import request
 
 app = Flask(__name__)
-
 pub = rospy.Publisher('command', Int16, queue_size=10)
-led_state = "low"
 
 @app.route('/')
 def index():
@@ -24,7 +22,6 @@ def setValue():
 
 
 def initRospy():
-    global led_state
     rospy.init_node('led_control', anonymous=True)
 
 if __name__ == '__main__':
