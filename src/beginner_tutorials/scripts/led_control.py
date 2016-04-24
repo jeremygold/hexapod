@@ -2,6 +2,8 @@
 
 import rospy
 from std_msgs.msg import Int16
+from signal import signal,SIGINT
+import sys
 
 from flask import Flask
 from flask import render_template
@@ -25,7 +27,12 @@ def initRospy():
     rospy.init_node('led_control', anonymous=True)
     pub = rospy.Publisher('command', Int16, queue_size=10)
 
+def sigintHandler(signal, frame):
+    rospy.loginfo("Terminating webserver")
+    sys.exit(0)
+
 if __name__ == '__main__':
+    signal(SIGINT, sigintHandler)
     initRospy()
     print "Starting webserver"
     app.run(debug=True, host='0.0.0.0', use_reloader=False)
