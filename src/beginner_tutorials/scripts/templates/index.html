@@ -3,16 +3,23 @@
 <script type="text/javascript" src="{{ url_for('static', filename='jquery-2.2.3.js')}}"></script>
 <script>
     function turnLedOn() {
-        $.get("/on", function(data) {
+        $.get("/set?value=249", function(data) {
             $('#led_State').html(data);
         });
     }
 
     function turnLedOff() {
-        $.get("/off", function(data) {
+        $.get("/set?value=51", function(data) {
             $('#led_State').html(data);
         });
     }
+    
+    //$("#value_slider").on("change", function() {
+        //$.get("/val", function(data) {
+            //$('#led_State').html(data);
+        //});
+    //});
+
 </script>
 
 </head>
@@ -21,6 +28,7 @@
 <h1>ROS LED Control</h1>
 <button onclick="turnLedOn()">Turn LED ON</button>
 <button onclick="turnLedOff()">Turn LED OFF</button>
+<input type="range" id="value_slider" value="100" min="50" max="250"></input>
 <div id="led_state"></div>
 </body>
 
