@@ -13,7 +13,7 @@
           <mesh filename="package://servo/meshes/Servo.stl"/>
         </geometry>
         <material name="dark_grey">
-            <color rgba="0.2 0.2 0.2 1"/>
+            <color rgba="0.1 0.1 0.1 1"/>
         </material>
       </visual>
 
@@ -34,26 +34,24 @@
       </inertial>
 
       <visual>
-        <origin xyz="-0.015 0 0" />
+        <origin rpy="3.1415927 0 0" xyz="0 0 0" />
         <geometry>
           <mesh filename="package://servo/meshes/ServoHorn.stl"/>
         </geometry>
-        <material name="light_grey">
-            <color rgba = "0.8 0.8 0.8 1"/>
-        </material>
+        <material name="dark_grey"/>
       </visual>
 
       <collision>
-        <origin xyz="-0.015 0 0" />
+        <origin xyz="0 0 0" />
         <geometry>
-          <box size=".040 .005 .001" />
+          <box size=".0413 .0135 .00213" />
         </geometry>
         <contact_coefficients mu="0" kp="1000.0" kd="1.0"/>
       </collision>
     </link>
 
     <joint name="swivel" type="continuous">
-      <origin xyz="-0.015 0 0.02" />
+      <origin xyz="-0.01035 0 0.02539" />
       <axis xyz="0 0 1" />
       <parent link="body"/>
       <child link="horn"/>
