@@ -1,0 +1,6 @@
+<launch>
+        <param name="robot_description" command="cat $(find servo)/urdf/servo.urdf" />
+        <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
+        <node name="state_publisher" pkg="servo" type="state_publisher.py" />
+</launch>
+
