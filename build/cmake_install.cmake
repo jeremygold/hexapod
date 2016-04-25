@@ -118,6 +118,7 @@ IF(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   INCLUDE("/mnt/hgfs/pub/research/ros/PubSubToRpi/build/gtest/cmake_install.cmake")
   INCLUDE("/mnt/hgfs/pub/research/ros/PubSubToRpi/build/beginner_tutorials/cmake_install.cmake")
+  INCLUDE("/mnt/hgfs/pub/research/ros/PubSubToRpi/build/r2d2/cmake_install.cmake")
 
 ENDIF(NOT CMAKE_INSTALL_LOCAL_ONLY)
 

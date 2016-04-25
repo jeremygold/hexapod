@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "r2d2")
+set(r2d2_MAINTAINER "jeremy <jeremy@todo.todo>")
+set(r2d2_DEPRECATED "")
+set(r2d2_VERSION "0.0.0")
+set(r2d2_BUILD_DEPENDS "roscpp" "rospy" "sensor_msgs" "std_msgs" "tf")
+set(r2d2_RUN_DEPENDS "roscpp" "rospy" "sensor_msgs" "std_msgs" "tf")
+set(r2d2_BUILDTOOL_DEPENDS "catkin")
