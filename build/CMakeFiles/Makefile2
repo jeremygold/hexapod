@@ -1209,6 +1209,21 @@ clean: r2d2/CMakeFiles/tf_generate_messages_py.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Directory level rules for directory servo
+
+# Convenience name for "all" pass in the directory.
+servo/all:
+.PHONY : servo/all
+
+# Convenience name for "clean" pass in the directory.
+servo/clean:
+.PHONY : servo/clean
+
+# Convenience name for "preinstall" pass in the directory.
+servo/preinstall:
+.PHONY : servo/preinstall
+
+#=============================================================================
 # Special targets to cleanup operation of make.
 
 # Special rule to run CMake to check the build system integrity.

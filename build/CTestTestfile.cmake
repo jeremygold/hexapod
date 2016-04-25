@@ -7,3 +7,4 @@
 SUBDIRS(gtest)
 SUBDIRS(beginner_tutorials)
 SUBDIRS(r2d2)
+SUBDIRS(servo)

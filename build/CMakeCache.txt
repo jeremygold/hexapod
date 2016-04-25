@@ -354,6 +354,12 @@ rostime_DIR:PATH=/opt/ros/indigo/share/rostime/cmake
 //The directory containing a CMake configuration file for sensor_msgs.
 sensor_msgs_DIR:PATH=/opt/ros/indigo/share/sensor_msgs/cmake
 
+//Value Computed by CMake
+servo_BINARY_DIR:STATIC=/mnt/hgfs/pub/research/ros/PubSubToRpi/build/servo
+
+//Value Computed by CMake
+servo_SOURCE_DIR:STATIC=/pub/research/ros/PubSubToRpi/src/servo
+
 //The directory containing a CMake configuration file for std_msgs.
 std_msgs_DIR:PATH=/opt/ros/indigo/share/std_msgs/cmake
 
@@ -477,7 +483,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_LOCAL_GENERATORS:INTERNAL=4
+CMAKE_NUMBER_OF_LOCAL_GENERATORS:INTERNAL=5
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
