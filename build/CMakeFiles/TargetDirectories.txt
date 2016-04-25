@@ -23,7 +23,6 @@
 /mnt/hgfs/pub/research/ros/PubSubToRpi/build/r2d2/CMakeFiles/sensor_msgs_generate_messages_cpp.dir
 /mnt/hgfs/pub/research/ros/PubSubToRpi/build/r2d2/CMakeFiles/sensor_msgs_generate_messages_lisp.dir
 /mnt/hgfs/pub/research/ros/PubSubToRpi/build/r2d2/CMakeFiles/sensor_msgs_generate_messages_py.dir
-/mnt/hgfs/pub/research/ros/PubSubToRpi/build/r2d2/CMakeFiles/state_publisher.dir
 /mnt/hgfs/pub/research/ros/PubSubToRpi/build/beginner_tutorials/CMakeFiles/std_msgs_generate_messages_cpp.dir
 /mnt/hgfs/pub/research/ros/PubSubToRpi/build/beginner_tutorials/CMakeFiles/std_msgs_generate_messages_lisp.dir
 /mnt/hgfs/pub/research/ros/PubSubToRpi/build/beginner_tutorials/CMakeFiles/std_msgs_generate_messages_py.dir

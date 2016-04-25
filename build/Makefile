@@ -527,19 +527,6 @@ sensor_msgs_generate_messages_py/fast:
 .PHONY : sensor_msgs_generate_messages_py/fast
 
 #=============================================================================
-# Target rules for targets named state_publisher
-
-# Build rule for target.
-state_publisher: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 state_publisher
-.PHONY : state_publisher
-
-# fast build rule for target.
-state_publisher/fast:
-	$(MAKE) -f r2d2/CMakeFiles/state_publisher.dir/build.make r2d2/CMakeFiles/state_publisher.dir/build
-.PHONY : state_publisher/fast
-
-#=============================================================================
 # Target rules for targets named tf2_msgs_generate_messages_cpp
 
 # Build rule for target.
@@ -659,7 +646,6 @@ help:
 	@echo "... sensor_msgs_generate_messages_cpp"
 	@echo "... sensor_msgs_generate_messages_lisp"
 	@echo "... sensor_msgs_generate_messages_py"
-	@echo "... state_publisher"
 	@echo "... tf2_msgs_generate_messages_cpp"
 	@echo "... tf2_msgs_generate_messages_lisp"
 	@echo "... tf2_msgs_generate_messages_py"

@@ -622,7 +622,7 @@ clean: beginner_tutorials/CMakeFiles/std_msgs_generate_messages_py.dir/clean
 # Directory level rules for directory r2d2
 
 # Convenience name for "all" pass in the directory.
-r2d2/all: r2d2/CMakeFiles/state_publisher.dir/all
+r2d2/all:
 .PHONY : r2d2/all
 
 # Convenience name for "clean" pass in the directory.
@@ -638,7 +638,6 @@ r2d2/clean: r2d2/CMakeFiles/geometry_msgs_generate_messages_py.dir/clean
 r2d2/clean: r2d2/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/clean
 r2d2/clean: r2d2/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/clean
 r2d2/clean: r2d2/CMakeFiles/sensor_msgs_generate_messages_py.dir/clean
-r2d2/clean: r2d2/CMakeFiles/state_publisher.dir/clean
 r2d2/clean: r2d2/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/clean
 r2d2/clean: r2d2/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/clean
 r2d2/clean: r2d2/CMakeFiles/tf2_msgs_generate_messages_py.dir/clean
@@ -1021,41 +1020,6 @@ r2d2/CMakeFiles/sensor_msgs_generate_messages_py.dir/clean:
 
 # clean rule for target.
 clean: r2d2/CMakeFiles/sensor_msgs_generate_messages_py.dir/clean
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target r2d2/CMakeFiles/state_publisher.dir
-
-# All Build rule for target.
-r2d2/CMakeFiles/state_publisher.dir/all:
-	$(MAKE) -f r2d2/CMakeFiles/state_publisher.dir/build.make r2d2/CMakeFiles/state_publisher.dir/depend
-	$(MAKE) -f r2d2/CMakeFiles/state_publisher.dir/build.make r2d2/CMakeFiles/state_publisher.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /mnt/hgfs/pub/research/ros/PubSubToRpi/build/CMakeFiles  3
-	@echo "Built target state_publisher"
-.PHONY : r2d2/CMakeFiles/state_publisher.dir/all
-
-# Include target in all.
-all: r2d2/CMakeFiles/state_publisher.dir/all
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-r2d2/CMakeFiles/state_publisher.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/hgfs/pub/research/ros/PubSubToRpi/build/CMakeFiles 1
-	$(MAKE) -f CMakeFiles/Makefile2 r2d2/CMakeFiles/state_publisher.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/hgfs/pub/research/ros/PubSubToRpi/build/CMakeFiles 0
-.PHONY : r2d2/CMakeFiles/state_publisher.dir/rule
-
-# Convenience name for target.
-state_publisher: r2d2/CMakeFiles/state_publisher.dir/rule
-.PHONY : state_publisher
-
-# clean rule for target.
-r2d2/CMakeFiles/state_publisher.dir/clean:
-	$(MAKE) -f r2d2/CMakeFiles/state_publisher.dir/build.make r2d2/CMakeFiles/state_publisher.dir/clean
-.PHONY : r2d2/CMakeFiles/state_publisher.dir/clean
-
-# clean rule for target.
-clean: r2d2/CMakeFiles/state_publisher.dir/clean
 .PHONY : clean
 
 #=============================================================================

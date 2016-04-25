@@ -318,20 +318,6 @@ sensor_msgs_generate_messages_py/fast:
 .PHONY : sensor_msgs_generate_messages_py/fast
 
 # Convenience name for target.
-r2d2/CMakeFiles/state_publisher.dir/rule:
-	cd /mnt/hgfs/pub/research/ros/PubSubToRpi/build && $(MAKE) -f CMakeFiles/Makefile2 r2d2/CMakeFiles/state_publisher.dir/rule
-.PHONY : r2d2/CMakeFiles/state_publisher.dir/rule
-
-# Convenience name for target.
-state_publisher: r2d2/CMakeFiles/state_publisher.dir/rule
-.PHONY : state_publisher
-
-# fast build rule for target.
-state_publisher/fast:
-	cd /mnt/hgfs/pub/research/ros/PubSubToRpi/build && $(MAKE) -f r2d2/CMakeFiles/state_publisher.dir/build.make r2d2/CMakeFiles/state_publisher.dir/build
-.PHONY : state_publisher/fast
-
-# Convenience name for target.
 r2d2/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/rule:
 	cd /mnt/hgfs/pub/research/ros/PubSubToRpi/build && $(MAKE) -f CMakeFiles/Makefile2 r2d2/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/rule
 .PHONY : r2d2/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/rule
@@ -415,30 +401,6 @@ tf_generate_messages_py/fast:
 	cd /mnt/hgfs/pub/research/ros/PubSubToRpi/build && $(MAKE) -f r2d2/CMakeFiles/tf_generate_messages_py.dir/build.make r2d2/CMakeFiles/tf_generate_messages_py.dir/build
 .PHONY : tf_generate_messages_py/fast
 
-src/state_publisher.o: src/state_publisher.cpp.o
-.PHONY : src/state_publisher.o
-
-# target to build an object file
-src/state_publisher.cpp.o:
-	cd /mnt/hgfs/pub/research/ros/PubSubToRpi/build && $(MAKE) -f r2d2/CMakeFiles/state_publisher.dir/build.make r2d2/CMakeFiles/state_publisher.dir/src/state_publisher.cpp.o
-.PHONY : src/state_publisher.cpp.o
-
-src/state_publisher.i: src/state_publisher.cpp.i
-.PHONY : src/state_publisher.i
-
-# target to preprocess a source file
-src/state_publisher.cpp.i:
-	cd /mnt/hgfs/pub/research/ros/PubSubToRpi/build && $(MAKE) -f r2d2/CMakeFiles/state_publisher.dir/build.make r2d2/CMakeFiles/state_publisher.dir/src/state_publisher.cpp.i
-.PHONY : src/state_publisher.cpp.i
-
-src/state_publisher.s: src/state_publisher.cpp.s
-.PHONY : src/state_publisher.s
-
-# target to generate assembly for a file
-src/state_publisher.cpp.s:
-	cd /mnt/hgfs/pub/research/ros/PubSubToRpi/build && $(MAKE) -f r2d2/CMakeFiles/state_publisher.dir/build.make r2d2/CMakeFiles/state_publisher.dir/src/state_publisher.cpp.s
-.PHONY : src/state_publisher.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -463,7 +425,6 @@ help:
 	@echo "... sensor_msgs_generate_messages_cpp"
 	@echo "... sensor_msgs_generate_messages_lisp"
 	@echo "... sensor_msgs_generate_messages_py"
-	@echo "... state_publisher"
 	@echo "... test"
 	@echo "... tf2_msgs_generate_messages_cpp"
 	@echo "... tf2_msgs_generate_messages_lisp"
@@ -471,9 +432,6 @@ help:
 	@echo "... tf_generate_messages_cpp"
 	@echo "... tf_generate_messages_lisp"
 	@echo "... tf_generate_messages_py"
-	@echo "... src/state_publisher.o"
-	@echo "... src/state_publisher.i"
-	@echo "... src/state_publisher.s"
 .PHONY : help
 
 
