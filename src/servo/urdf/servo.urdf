@@ -51,7 +51,7 @@
     </link>
 
     <joint name="swivel" type="continuous">
-      <origin xyz="-0.01035 0 0.02539" />
+      <origin xyz="-0.01035 0 0.0292" />
       <axis xyz="0 0 1" />
       <parent link="body"/>
       <child link="horn"/>
