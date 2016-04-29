@@ -7,4 +7,4 @@
 # new environment variables
 
 # modified environment variables
-export PWD="/mnt/hgfs/pub/research/ros/PubSubToRpi/build"
+export PWD="/home/pi/PubSubToRpi/build"

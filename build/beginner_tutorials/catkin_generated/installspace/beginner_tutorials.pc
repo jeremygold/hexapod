@@ -1,8 +1,8 @@
-prefix=/pub/research/ros/PubSubToRpi/install
+prefix=/home/pi/PubSubToRpi/install
 
 Name: beginner_tutorials
 Description: Description of beginner_tutorials
 Version: 0.0.0
 Cflags: 
-Libs: -L/pub/research/ros/PubSubToRpi/install/lib 
+Libs: -L/home/pi/PubSubToRpi/install/lib 
 Requires: 

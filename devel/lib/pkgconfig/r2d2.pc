@@ -1,8 +1,0 @@
-prefix=/pub/research/ros/PubSubToRpi/devel
-
-Name: r2d2
-Description: Description of r2d2
-Version: 0.0.0
-Cflags: 
-Libs: -L/pub/research/ros/PubSubToRpi/devel/lib 
-Requires: 

@@ -1,23 +1,25 @@
 Determining if the pthread_create exist failed with the following output:
-Change Dir: /mnt/hgfs/pub/research/ros/PubSubToRpi/build/CMakeFiles/CMakeTmp
+Change Dir: /home/pi/PubSubToRpi/build/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec1193343854/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec1193343854.dir/build.make CMakeFiles/cmTryCompileExec1193343854.dir/build
-make[1]: Entering directory `/mnt/hgfs/pub/research/ros/PubSubToRpi/build/CMakeFiles/CMakeTmp'
-/usr/bin/cmake -E cmake_progress_report /mnt/hgfs/pub/research/ros/PubSubToRpi/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec1193343854.dir/CheckSymbolExists.c.o
-/usr/bin/cc    -o CMakeFiles/cmTryCompileExec1193343854.dir/CheckSymbolExists.c.o   -c /mnt/hgfs/pub/research/ros/PubSubToRpi/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
-Linking C executable cmTryCompileExec1193343854
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1193343854.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTryCompileExec1193343854.dir/CheckSymbolExists.c.o  -o cmTryCompileExec1193343854 -rdynamic 
-CMakeFiles/cmTryCompileExec1193343854.dir/CheckSymbolExists.c.o: In function `main':
-CheckSymbolExists.c:(.text+0x16): undefined reference to `pthread_create'
+Run Build Command:"/usr/bin/make" "cmTryCompileExec1905037883/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1905037883.dir/build.make CMakeFiles/cmTryCompileExec1905037883.dir/build
+make[1]: Entering directory '/home/pi/PubSubToRpi/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/pi/PubSubToRpi/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1905037883.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTryCompileExec1905037883.dir/CheckSymbolExists.c.o   -c /home/pi/PubSubToRpi/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTryCompileExec1905037883
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1905037883.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTryCompileExec1905037883.dir/CheckSymbolExists.c.o  -o cmTryCompileExec1905037883 -rdynamic 
+CMakeFiles/cmTryCompileExec1905037883.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0x38): undefined reference to `pthread_create'
 collect2: error: ld returned 1 exit status
-make[1]: Leaving directory `/mnt/hgfs/pub/research/ros/PubSubToRpi/build/CMakeFiles/CMakeTmp'
-make[1]: *** [cmTryCompileExec1193343854] Error 1
-make: *** [cmTryCompileExec1193343854/fast] Error 2
+CMakeFiles/cmTryCompileExec1905037883.dir/build.make:88: recipe for target 'cmTryCompileExec1905037883' failed
+make[1]: Leaving directory '/home/pi/PubSubToRpi/build/CMakeFiles/CMakeTmp'
+make[1]: *** [cmTryCompileExec1905037883] Error 1
+Makefile:118: recipe for target 'cmTryCompileExec1905037883/fast' failed
+make: *** [cmTryCompileExec1905037883/fast] Error 2
 
-File /mnt/hgfs/pub/research/ros/PubSubToRpi/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+File /home/pi/PubSubToRpi/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
 /* */
 #include <pthread.h>
 
@@ -33,21 +35,23 @@ int main(int argc, char** argv)
 }
 
 Determining if the function pthread_create exists in the pthreads failed with the following output:
-Change Dir: /mnt/hgfs/pub/research/ros/PubSubToRpi/build/CMakeFiles/CMakeTmp
+Change Dir: /home/pi/PubSubToRpi/build/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec2432556182/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec2432556182.dir/build.make CMakeFiles/cmTryCompileExec2432556182.dir/build
-make[1]: Entering directory `/mnt/hgfs/pub/research/ros/PubSubToRpi/build/CMakeFiles/CMakeTmp'
-/usr/bin/cmake -E cmake_progress_report /mnt/hgfs/pub/research/ros/PubSubToRpi/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec2432556182.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTryCompileExec2432556182.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
-Linking C executable cmTryCompileExec2432556182
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2432556182.dir/link.txt --verbose=1
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTryCompileExec2432556182.dir/CheckFunctionExists.c.o  -o cmTryCompileExec2432556182 -rdynamic -lpthreads 
+Run Build Command:"/usr/bin/make" "cmTryCompileExec1647623910/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1647623910.dir/build.make CMakeFiles/cmTryCompileExec1647623910.dir/build
+make[1]: Entering directory '/home/pi/PubSubToRpi/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/pi/PubSubToRpi/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1647623910.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTryCompileExec1647623910.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.0/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec1647623910
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1647623910.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTryCompileExec1647623910.dir/CheckFunctionExists.c.o  -o cmTryCompileExec1647623910 -rdynamic -lpthreads 
 /usr/bin/ld: cannot find -lpthreads
 collect2: error: ld returned 1 exit status
-make[1]: Leaving directory `/mnt/hgfs/pub/research/ros/PubSubToRpi/build/CMakeFiles/CMakeTmp'
-make[1]: *** [cmTryCompileExec2432556182] Error 1
-make: *** [cmTryCompileExec2432556182/fast] Error 2
+CMakeFiles/cmTryCompileExec1647623910.dir/build.make:88: recipe for target 'cmTryCompileExec1647623910' failed
+make[1]: Leaving directory '/home/pi/PubSubToRpi/build/CMakeFiles/CMakeTmp'
+make[1]: *** [cmTryCompileExec1647623910] Error 1
+Makefile:118: recipe for target 'cmTryCompileExec1647623910/fast' failed
+make: *** [cmTryCompileExec1647623910/fast] Error 2
 
 

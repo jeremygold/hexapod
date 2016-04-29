@@ -1,2 +1,2 @@
 - setup-file:
-    local-name: /pub/research/ros/PubSubToRpi/devel/setup.sh
+    local-name: /home/pi/PubSubToRpi/devel/setup.sh
