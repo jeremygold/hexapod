@@ -11,10 +11,11 @@ import math
 
 joint_pub = rospy.Publisher('joint_states', JointState, queue_size=10)
 broadcaster = tf.TransformBroadcaster()
+
 # message declarations
 joint_state = JointState()
 joint_state.header = Header()
-joint_state.name = ["swivel"]
+joint_state.name = ["swivel", "left_front_pitch_swivel"]
 
 def updateState(data):
     # When we receive an updated position, convert to radians, and send to tf subscriber
@@ -28,7 +29,7 @@ def updateState(data):
 
     # update joint_state
     joint_state.header.stamp = rospy.Time.now()
-    joint_state.position = [swivel]
+    joint_state.position = [swivel, swivel]
     joint_state.velocity = []
     joint_state.effort = []
 
@@ -36,9 +37,8 @@ def updateState(data):
     joint_pub.publish(joint_state)
 
     # update transform
-    # (moving in a circle with radius=2)
     broadcaster.sendTransform((0, 0, 0),
-                              tf.transformations.quaternion_from_euler(0, 0, swivel + math.pi / 2),
+                              tf.transformations.quaternion_from_euler(0, 0, swivel),
                               rospy.Time.now(),
                               "axis",
                               "odom")
