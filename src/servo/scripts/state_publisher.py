@@ -15,7 +15,7 @@ broadcaster = tf.TransformBroadcaster()
 # message declarations
 joint_state = JointState()
 joint_state.header = Header()
-joint_state.name = ["swivel", "left_front_pitch_swivel"]
+joint_state.name = ["swivel", "left_front_pitch_swivel", "left_front_knee_swivel"]
 
 def updateState(data):
     # When we receive an updated position, convert to radians, and send to tf subscriber
@@ -29,7 +29,7 @@ def updateState(data):
 
     # update joint_state
     joint_state.header.stamp = rospy.Time.now()
-    joint_state.position = [swivel, swivel]
+    joint_state.position = [swivel, swivel, swivel]
     joint_state.velocity = []
     joint_state.effort = []
 

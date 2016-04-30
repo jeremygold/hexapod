@@ -74,6 +74,18 @@
         </visual>
     </link>
 
+    <link name="left_front_knee_servo_base">
+      <visual>
+        <origin xyz="0 0 0"/>
+        <geometry>
+          <mesh filename="package://servo/meshes/Servo.stl"/>
+        </geometry>
+        <material name="dark_grey">
+            <color rgba="0.1 0.1 0.1 1"/>
+        </material>
+      </visual>
+    </link>
+
     <joint name="hip_yaw_servo" type="fixed">
       <origin rpy="0 0 0" xyz="0 -0.00995 0"/>
       <parent link="left_hip"/>
@@ -110,5 +122,12 @@
         <origin rpy="-1.5707963 3.1415927 0" xyz="0.080 0 0"/>
         <parent link="left_front_thigh"/>
         <child link="left_front_knee_servo_horn"/>
+    </joint>
+
+    <joint name="left_front_knee_swivel" type="continuous">
+      <origin rpy="3.1415927 0 -1.5707963" xyz="0 -0.01035 0.0292" />
+      <axis xyz="0 0 -1" />
+      <parent link="left_front_knee_servo_horn"/>
+      <child link="left_front_knee_servo_base"/>
     </joint>
 </robot>
