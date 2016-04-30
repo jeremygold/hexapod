@@ -1,4 +1,15 @@
 <robot name="hexapod">
+    <link name="body_top">
+      <visual>
+        <origin rpy="0 0 0" xyz="0 0 0" />
+        <geometry>
+          <mesh filename="package://servo/meshes/BodyTop_V16.stl" scale="0.001 0.001 0.001" />
+        </geometry>
+        <material name="yellow">
+            <color rgba="0.98 0.90 0.04 1"/>
+        </material>
+      </visual>
+    </link>
 
     <link name="left_hip">
       <visual>
@@ -6,9 +17,7 @@
         <geometry>
           <mesh filename="package://servo/meshes/LeftHip_V15.stl" scale="0.001 0.001 0.001" />
         </geometry>
-        <material name="yellow">
-            <color rgba="0.98 0.90 0.04 1"/>
-        </material>
+        <material name="yellow"/>
       </visual>
     </link>
 
@@ -94,23 +103,29 @@
       </visual>
     </link>
 
-    <joint name="hip_yaw_servo" type="fixed">
-      <origin rpy="0 0 0" xyz="0 -0.00995 0"/>
-      <parent link="left_hip"/>
+    <joint name="body_to_front_left" type="fixed">
+      <origin rpy="3.1415927 0 -1.5707963" xyz="0 0 0.0045"/>
+      <parent link="body_top"/>
+      <child link="left_front_yaw_servo_horn"/>
+    </joint>
+
+    <joint name="swivel" type="continuous">
+      <origin rpy="0 3.1415927 1.5707963" xyz="0 -0.01035 0.0292" />
+      <axis xyz="0 0 -1" />
+      <parent link="left_front_yaw_servo_horn"/>
       <child link="left_front_yaw_servo_base"/>
+    </joint>
+
+    <joint name="hip_yaw_servo" type="fixed">
+      <origin rpy="0 0 0" xyz="0 0.00995 0"/>
+      <parent link="left_front_yaw_servo_base"/>
+      <child link="left_hip"/>
     </joint>
 
     <joint name="hip_pitch_servo" type="fixed">
       <origin rpy="0 -1.57079632679 3.1415927" xyz="-0.00991 0.01295 0.001005" />
       <parent link="left_hip"/>
       <child link="left_front_pitch_servo_base"/>
-    </joint>
-
-    <joint name="swivel" type="continuous">
-      <origin rpy="3.1415927 0 -1.57079632679" xyz="-0.01035 0 0.0292" />
-      <axis xyz="0 0 -1" />
-      <parent link="left_front_yaw_servo_base"/>
-      <child link="left_front_yaw_servo_horn"/>
     </joint>
 
     <joint name="left_front_pitch_swivel" type="continuous">
