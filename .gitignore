@@ -3,6 +3,7 @@
 *.gcode
 .DS_Store
 *.swp
+*.pyc
 
 ConceptArt/ikRender/*.png
 ConceptArt/ikRenderWalk/*.png
