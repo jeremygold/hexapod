@@ -13,7 +13,7 @@
 
     <link name="left_front_yaw_servo_base">
       <visual>
-        <origin rpy="0 0 0" xyz="0 -0.00995 0"/>
+        <origin xyz="0 0 0"/>
         <geometry>
           <mesh filename="package://servo/meshes/Servo.stl"/>
         </geometry>
@@ -25,7 +25,7 @@
 
     <link name="left_front_pitch_servo_base">
       <visual>
-        <origin rpy="0 -1.57079632679 3.1415927" xyz="-0.00991 0.01295 0.001005" />
+        [<origin xyz="0 0 0"/>
         <geometry>
           <mesh filename="package://servo/meshes/Servo.stl"/>
         </geometry>
@@ -35,7 +35,7 @@
 
     <link name="left_front_yaw_servo_horn">
       <visual>
-        <origin rpy="3.1415927 0 -1.57079632679" xyz="0 0 0.00381" />
+        <origin xyz="0 0 0" />
         <geometry>
           <mesh filename="package://servo/meshes/ServoHorn.stl"/>
         </geometry>
@@ -45,7 +45,7 @@
 
     <link name="left_front_pitch_servo_horn">
       <visual>
-        <origin rpy="3.1415927 0 -1.57079632679" xyz="0 0 0.00381" />
+        <origin xyz="0 0 0" />
         <geometry>
           <mesh filename="package://servo/meshes/ServoHorn.stl"/>
         </geometry>
@@ -54,27 +54,27 @@
     </link>
 
     <joint name="swivel" type="continuous">
-      <origin xyz="-0.01035 -0.00995 0.0292" />
+      <origin rpy="3.1415927 0 -1.57079632679" xyz="-0.01035 0 0.0292" />
       <axis xyz="0 0 -1" />
       <parent link="left_front_yaw_servo_base"/>
       <child link="left_front_yaw_servo_horn"/>
     </joint>
 
     <joint name="left_front_pitch_swivel" type="continuous">
-      <origin xyz="-0.01035 -0.00995 0.0292" />
+      <origin rpy="3.1415927 0 -1.57079632679" xyz="-0.01035 0 0.0292" />
       <axis xyz="0 0 -1" />
       <parent link="left_front_pitch_servo_base"/>
       <child link="left_front_pitch_servo_horn"/>
     </joint>
 
     <joint name="hip_yaw_servo" type="fixed">
-      <origin xyz="0 0 0"/>
+      <origin rpy="0 0 0" xyz="0 -0.00995 0"/>
       <parent link="left_hip"/>
       <child link="left_front_yaw_servo_base"/>
     </joint>
 
     <joint name="hip_pitch_servo" type="fixed">
-      <origin xyz="0 0 0"/>
+      <origin rpy="0 -1.57079632679 3.1415927" xyz="-0.00991 0.01295 0.001005" />
       <parent link="left_hip"/>
       <child link="left_front_pitch_servo_base"/>
     </joint>
