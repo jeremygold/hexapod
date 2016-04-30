@@ -8,8 +8,9 @@ Panels:
         - /Status1
         - /Grid1
         - /RobotModel1
+        - /RobotModel1/Links1
         - /Axes1
-      Splitter Ratio: 0.5
+      Splitter Ratio: 0.680412
     Tree Height: 873
   - Class: rviz/Selection
     Name: Selection
@@ -61,6 +62,21 @@ Visualization Manager:
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
+        body_bottom:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        body_center:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        body_top:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
         left_front_knee_servo_base:
           Alpha: 1
           Show Axes: false
@@ -122,7 +138,7 @@ Visualization Manager:
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
-    Fixed Frame: left_hip
+    Fixed Frame: body_top
     Frame Rate: 30
   Name: root
   Tools:
@@ -143,7 +159,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 0.443123
+      Distance: 0.479502
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.06
         Stereo Focal Distance: 1
@@ -155,10 +171,10 @@ Visualization Manager:
         Z: 0
       Name: Current View
       Near Clip Distance: 0.01
-      Pitch: 0.474797
+      Pitch: 0.579797
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 0.375404
+      Yaw: 0.515404
     Saved: ~
 Window Geometry:
   Displays:
