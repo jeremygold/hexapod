@@ -64,6 +64,16 @@
         </visual>
     </link>
 
+    <link name="left_front_knee_servo_horn">
+        <visual>
+            <origin xyz="0 0 0" />
+            <geometry>
+                <mesh filename="package://servo/meshes/ServoHorn.stl"/>
+            </geometry>
+            <material name="dark_grey"/>
+        </visual>
+    </link>
+
     <joint name="hip_yaw_servo" type="fixed">
       <origin rpy="0 0 0" xyz="0 -0.00995 0"/>
       <parent link="left_hip"/>
@@ -94,5 +104,11 @@
         <origin rpy="1.5707963 0 0" xyz="0 0 0"/>
         <parent link="left_front_pitch_servo_horn"/>
         <child link="left_front_thigh"/>
+    </joint>
+
+    <joint name="left_front_knee" type="fixed">
+        <origin rpy="-1.5707963 3.1415927 0" xyz="0.080 0 0"/>
+        <parent link="left_front_thigh"/>
+        <child link="left_front_knee_servo_horn"/>
     </joint>
 </robot>
