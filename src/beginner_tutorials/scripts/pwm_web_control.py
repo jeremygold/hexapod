@@ -18,13 +18,13 @@ def index():
 @app.route("/set")
 def setValue():
     value = int(request.args.get("value"))
-    rospy.loginfo("Setting PWM value to {0:d}".format(value))
+    rospy.loginfo("Setting Servo Position value to {0:d}".format(value))
     pub.publish(value)
     return "PWM value {0:d}".format(value)
 
 def initRospy():
     global pub
-    rospy.init_node('led_control', anonymous=True)
+    rospy.init_node('web_servo_control', anonymous=True)
     pub = rospy.Publisher('command', Int16, queue_size=10)
 
 def sigintHandler(signal, frame):

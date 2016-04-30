@@ -8,7 +8,7 @@
       </inertial>
 
       <visual>
-        <origin xyz="0 0 0"/>
+        <origin xyz="0 -0.00995 0"/>
         <geometry>
           <mesh filename="package://servo/meshes/Servo.stl"/>
         </geometry>
@@ -18,7 +18,7 @@
       </visual>
 
       <collision>
-        <origin xyz="0 0 0" />
+        <origin xyz="0 -0.00995 0" />
         <geometry>
           <box size=".040 .020 .038" />
         </geometry>
@@ -77,14 +77,14 @@
     </link>
 
     <joint name="swivel" type="continuous">
-      <origin xyz="-0.01035 0 0.0292" />
+      <origin xyz="-0.01035 -0.00995 0.0292" />
       <axis xyz="0 0 1" />
       <parent link="servo_base"/>
       <child link="horn"/>
     </joint>
 
     <joint name="hip_servo" type="fixed">
-      <origin xyz="-0.01035 0 0.0292" />
+      <origin xyz="0 0 0" />
       <axis xyz="0 0 1" />
       <parent link="left_hip"/>
       <child link="servo_base"/>

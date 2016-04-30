@@ -3,22 +3,28 @@
 <script type="text/javascript" src="{{ url_for('static', filename='jquery-2.2.3.js')}}"></script>
 
 <script>
-    function openEye() {
-        $.get("/set?value=180", function(data) {
-            $('#eye_state').html(data);
+    function setMin() {
+        $.get("/set?value=-90", function(data) {
+            $('#servo_position').html(data);
         });
     }
 
-    function closeEye() {
-        $.get("/set?value=150", function(data) {
-            $('#eye_state').html(data);
+    function setMax() {
+        $.get("/set?value=90", function(data) {
+            $('#servo_position').html(data);
         });
     }
     
+    function setCenter() {
+        $.get("/set?value=0", function(data) {
+            $('#servo_position').html(data);
+        });
+    }
+
     $(document).ready(function() {
         $("#value_slider").on("input", function() {
             $.get("/set?value="+ this.value, function(data) {
-                $('#eye_state').html(data);
+                $('#servo_position').html(data);
             });
         });
     });
@@ -27,12 +33,13 @@
 
 </head>
 <body>
-<title>ROS PWM Control</title>
-<h1>ROS PWM Control</h1>
-<button onclick="openEye()">Open Eye</button>
-<button onclick="closeEye()">Close Eye</button>
-<input type="range" id="value_slider" value="150" min="150" max="180"></input>
-<div id="eye_state"></div>
+<title>ROS Servo Control</title>
+<h1>ROS Servo Control</h1>
+<button onclick="setMin()">Min</button>
+<button onclick="setMax()">Max</button>
+<button onclick="setCenter()">Center</button>
+<input type="range" id="value_slider" value="0" min="-90" max="90"></input>
+<div id="servo_position"></div>
 </body>
 
 
