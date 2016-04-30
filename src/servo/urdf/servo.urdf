@@ -1,6 +1,6 @@
 <robot name="servo">
 
-    <link name="body">
+    <link name="servo_base">
       <inertial>
         <mass value="1"/>
         <inertia ixx="100" ixy="0" ixz="0" iyy="100" iyz="0" izz="100" />
@@ -50,11 +50,43 @@
       </collision>
     </link>
 
+    <link name="left_hip">
+      <inertial>
+        <mass value="1"/>
+        <inertia ixx="100" ixy="0" ixz="0" iyy="100" iyz="0" izz="100" />
+        <origin/>
+      </inertial>
+
+      <visual>
+        <origin rpy="0 0 0" xyz="0 0 0" />
+        <geometry>
+          <mesh filename="package://servo/meshes/LeftHip_V15.stl" scale="0.001 0.001 0.001" />
+        </geometry>
+        <material name="yellow">
+            <color rgba="0.98 0.90 0.04 1"/>
+        </material>
+      </visual>
+
+      <collision>
+        <origin xyz="0 0 0" />
+        <geometry>
+          <box size=".0625 .0423 .0697" />
+        </geometry>
+        <contact_coefficients mu="0" kp="1000.0" kd="1.0"/>
+      </collision>
+    </link>
+
     <joint name="swivel" type="continuous">
       <origin xyz="-0.01035 0 0.0292" />
       <axis xyz="0 0 1" />
-      <parent link="body"/>
+      <parent link="servo_base"/>
       <child link="horn"/>
     </joint>
 
+    <joint name="hip_servo" type="fixed">
+      <origin xyz="-0.01035 0 0.0292" />
+      <axis xyz="0 0 1" />
+      <parent link="left_hip"/>
+      <child link="servo_base"/>
+    </joint>
 </robot>
