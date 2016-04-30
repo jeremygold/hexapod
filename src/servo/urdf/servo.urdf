@@ -1,11 +1,5 @@
 <robot name="servo">
     <link name="left_hip">
-      <inertial>
-        <mass value="1"/>
-        <inertia ixx="100" ixy="0" ixz="0" iyy="100" iyz="0" izz="100" />
-        <origin/>
-      </inertial>
-
       <visual>
         <origin rpy="0 0 0" xyz="0 0 0" />
         <geometry>
@@ -15,23 +9,9 @@
             <color rgba="0.98 0.90 0.04 1"/>
         </material>
       </visual>
-
-      <collision>
-        <origin xyz="0 0 0" />
-        <geometry>
-          <box size=".0625 .0423 .0697" />
-        </geometry>
-        <contact_coefficients mu="0" kp="1000.0" kd="1.0"/>
-      </collision>
     </link>
 
     <link name="left_front_yaw_servo_base">
-      <inertial>
-        <mass value="1"/>
-        <inertia ixx="100" ixy="0" ixz="0" iyy="100" iyz="0" izz="100" />
-        <origin/>
-      </inertial>
-
       <visual>
         <origin xyz="0 -0.00995 0"/>
         <geometry>
@@ -41,23 +21,9 @@
             <color rgba="0.1 0.1 0.1 1"/>
         </material>
       </visual>
-
-      <collision>
-        <origin xyz="0 -0.00995 0" />
-        <geometry>
-          <box size=".040 .020 .038" />
-        </geometry>
-        <contact_coefficients mu="0" kp="1000.0" kd="1.0"/>
-      </collision>
     </link>
 
     <link name="left_front_yaw_servo_horn">
-      <inertial>
-        <mass value="1"/>
-        <inertia ixx="100" ixy="0" ixz="0" iyy="100" iyz="0" izz="100" />
-        <origin/>
-      </inertial>
-
       <visual>
         <origin rpy="3.1415927 0 -1.57079632679" xyz="0 0 0" />
         <geometry>
@@ -65,23 +31,9 @@
         </geometry>
         <material name="dark_grey"/>
       </visual>
-
-      <collision>
-        <origin xyz="0 0 0" />
-        <geometry>
-          <box size=".0413 .0135 .00213" />
-        </geometry>
-        <contact_coefficients mu="0" kp="1000.0" kd="1.0"/>
-      </collision>
     </link>
 
     <link name="left_front_pitch_servo_base">
-      <inertial>
-        <mass value="1"/>
-        <inertia ixx="100" ixy="0" ixz="0" iyy="100" iyz="0" izz="100" />
-        <origin/>
-      </inertial>
-
       <visual>
         <origin rpy="0 -1.57079632679 3.1415927" xyz="-0.00341 0.01295 0.001005" />
         <geometry>
@@ -89,23 +41,9 @@
         </geometry>
         <material name="dark_grey"/>
       </visual>
-
-      <collision>
-        <origin xyz="-0.00241 0.01295 0.001505" />
-        <geometry>
-          <box size=".040 .020 .038" />
-        </geometry>
-        <contact_coefficients mu="0" kp="1000.0" kd="1.0"/>
-      </collision>
     </link>
 
     <link name="left_front_pitch_servo_horn">
-      <inertial>
-        <mass value="1"/>
-        <inertia ixx="100" ixy="0" ixz="0" iyy="100" iyz="0" izz="100" />
-        <origin/>
-      </inertial>
-
       <visual>
         <origin rpy="3.1415927 0 -1.57079632679" xyz="-0.00341 0.01295 0.001005" />
         <geometry>
@@ -113,14 +51,6 @@
         </geometry>
         <material name="dark_grey"/>
       </visual>
-
-      <collision>
-        <origin xyz="0 0 0" />
-        <geometry>
-          <box size=".0413 .0135 .00213" />
-        </geometry>
-        <contact_coefficients mu="0" kp="1000.0" kd="1.0"/>
-      </collision>
     </link>
 
     <joint name="swivel" type="continuous">
@@ -131,7 +61,7 @@
     </joint>
 
     <joint name="left_front_pitch_swivel" type="continuous">
-      <origin xyz="0 0 0" />
+      <origin xyz="-0.01035 -0.00995 0.0292" />
       <axis xyz="0 0 -1" />
       <parent link="left_front_pitch_servo_base"/>
       <child link="left_front_pitch_servo_horn"/>
@@ -139,14 +69,12 @@
 
     <joint name="hip_yaw_servo" type="fixed">
       <origin xyz="0 0 0" />
-      <axis xyz="0 0 1" />
       <parent link="left_hip"/>
       <child link="left_front_yaw_servo_base"/>
     </joint>
 
     <joint name="hip_pitch_servo" type="fixed">
       <origin xyz="0 0 0" />
-      <axis xyz="0 0 1" />
       <parent link="left_hip"/>
       <child link="left_front_pitch_servo_base"/>
     </joint>
