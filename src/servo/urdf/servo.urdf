@@ -1,4 +1,5 @@
-<robot name="servo">
+<robot name="hexapod">
+
     <link name="left_hip">
       <visual>
         <origin rpy="0 0 0" xyz="0 0 0" />
@@ -53,6 +54,28 @@
       </visual>
     </link>
 
+    <link name="left_front_thigh">
+        <visual>
+            <origin xyz="0.090 0.02921 -0.00995" />
+            <geometry>
+                <mesh filename="package://servo/meshes/Thigh_V15.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+            <material name="yellow"/>
+        </visual>
+    </link>
+
+    <joint name="hip_yaw_servo" type="fixed">
+      <origin rpy="0 0 0" xyz="0 -0.00995 0"/>
+      <parent link="left_hip"/>
+      <child link="left_front_yaw_servo_base"/>
+    </joint>
+
+    <joint name="hip_pitch_servo" type="fixed">
+      <origin rpy="0 -1.57079632679 3.1415927" xyz="-0.00991 0.01295 0.001005" />
+      <parent link="left_hip"/>
+      <child link="left_front_pitch_servo_base"/>
+    </joint>
+
     <joint name="swivel" type="continuous">
       <origin rpy="3.1415927 0 -1.57079632679" xyz="-0.01035 0 0.0292" />
       <axis xyz="0 0 -1" />
@@ -67,15 +90,9 @@
       <child link="left_front_pitch_servo_horn"/>
     </joint>
 
-    <joint name="hip_yaw_servo" type="fixed">
-      <origin rpy="0 0 0" xyz="0 -0.00995 0"/>
-      <parent link="left_hip"/>
-      <child link="left_front_yaw_servo_base"/>
-    </joint>
-
-    <joint name="hip_pitch_servo" type="fixed">
-      <origin rpy="0 -1.57079632679 3.1415927" xyz="-0.00991 0.01295 0.001005" />
-      <parent link="left_hip"/>
-      <child link="left_front_pitch_servo_base"/>
+    <joint name="left_front_thigh" type="fixed">
+        <origin rpy="1.5707963 0 0" xyz="0 0 0"/>
+        <parent link="left_front_pitch_servo_horn"/>
+        <child link="left_front_thigh"/>
     </joint>
 </robot>
