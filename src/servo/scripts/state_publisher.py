@@ -16,15 +16,13 @@ joint_state = JointState()
 joint_state.header = Header()
 joint_state.name = ["swivel"]
 
-
-
 def updateState(data):
-    # When we receive an updated position, convert to angle, and send to tf subscriber
+    # When we receive an updated position, convert to radians, and send to tf subscriber
     global joint_pub
     global broadcaster
     global joint_state
 
-    swivel = (data.data - 150) * math.pi / 180
+    swivel = data.data * math.pi / 180
 
     rospy.loginfo("Updating servo position: {:d}".format(data.data))
 

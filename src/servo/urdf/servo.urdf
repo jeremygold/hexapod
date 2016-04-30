@@ -34,7 +34,7 @@
       </inertial>
 
       <visual>
-        <origin rpy="3.1415927 0 0" xyz="0 0 0" />
+        <origin rpy="3.1415927 0 -1.57079632679" xyz="0 0 0" />
         <geometry>
           <mesh filename="package://servo/meshes/ServoHorn.stl"/>
         </geometry>
@@ -78,7 +78,7 @@
 
     <joint name="swivel" type="continuous">
       <origin xyz="-0.01035 -0.00995 0.0292" />
-      <axis xyz="0 0 1" />
+      <axis xyz="0 0 -1" />
       <parent link="servo_base"/>
       <child link="horn"/>
     </joint>
