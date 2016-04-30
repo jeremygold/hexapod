@@ -13,7 +13,7 @@
 
     <link name="left_front_yaw_servo_base">
       <visual>
-        <origin xyz="0 -0.00995 0"/>
+        <origin rpy="0 0 0" xyz="0 -0.00995 0"/>
         <geometry>
           <mesh filename="package://servo/meshes/Servo.stl"/>
         </geometry>
@@ -23,19 +23,9 @@
       </visual>
     </link>
 
-    <link name="left_front_yaw_servo_horn">
-      <visual>
-        <origin rpy="3.1415927 0 -1.57079632679" xyz="0 0 0" />
-        <geometry>
-          <mesh filename="package://servo/meshes/ServoHorn.stl"/>
-        </geometry>
-        <material name="dark_grey"/>
-      </visual>
-    </link>
-
     <link name="left_front_pitch_servo_base">
       <visual>
-        <origin rpy="0 -1.57079632679 3.1415927" xyz="-0.00341 0.01295 0.001005" />
+        <origin rpy="0 -1.57079632679 3.1415927" xyz="-0.00991 0.01295 0.001005" />
         <geometry>
           <mesh filename="package://servo/meshes/Servo.stl"/>
         </geometry>
@@ -43,9 +33,19 @@
       </visual>
     </link>
 
+    <link name="left_front_yaw_servo_horn">
+      <visual>
+        <origin rpy="3.1415927 0 -1.57079632679" xyz="0 0 0.00381" />
+        <geometry>
+          <mesh filename="package://servo/meshes/ServoHorn.stl"/>
+        </geometry>
+        <material name="dark_grey"/>
+      </visual>
+    </link>
+
     <link name="left_front_pitch_servo_horn">
       <visual>
-        <origin rpy="3.1415927 0 -1.57079632679" xyz="-0.00341 0.01295 0.001005" />
+        <origin rpy="3.1415927 0 -1.57079632679" xyz="0 0 0.00381" />
         <geometry>
           <mesh filename="package://servo/meshes/ServoHorn.stl"/>
         </geometry>
@@ -68,13 +68,13 @@
     </joint>
 
     <joint name="hip_yaw_servo" type="fixed">
-      <origin xyz="0 0 0" />
+      <origin xyz="0 0 0"/>
       <parent link="left_hip"/>
       <child link="left_front_yaw_servo_base"/>
     </joint>
 
     <joint name="hip_pitch_servo" type="fixed">
-      <origin xyz="0 0 0" />
+      <origin xyz="0 0 0"/>
       <parent link="left_hip"/>
       <child link="left_front_pitch_servo_base"/>
     </joint>
