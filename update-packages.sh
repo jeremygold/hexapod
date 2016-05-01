@@ -3,7 +3,7 @@
 # Ref http://wiki.ros.org/ROSberryPi/Installing%20ROS%20Indigo%20on%20Raspberry%20Pi, section Maintaining a Source Checkout
  
 cd ~/ros_catkin_ws
-rosinstall_generator ros_comm sensor_msgs tf robot_state_publisher --rosdistro indigo --deps --wet-only --exclude roslisp --tar > indigo-ros.rosinstall
+rosinstall_generator ros_comm sensor_msgs tf robot_state_publisher xacro --rosdistro indigo --deps --wet-only --exclude roslisp --tar > indigo-ros.rosinstall
 
 wstool merge -t src indigo-ros.rosinstall
 wstool update -t src
