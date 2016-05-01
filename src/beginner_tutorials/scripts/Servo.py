@@ -15,7 +15,7 @@ class Servo:
 
     def write_value_to_hardware(self):
         # Compensate for 500us - 2500us representing +/- 90 degrees, and ServoBlaster is in units of 10us
-        pwm_delay = 150 - (self.angle * 100 / 90)
+        pwm_delay = 150 + (self.angle * 100 / 90)
 
         # Send to PWM output
         servo_command = "%u=%u\n" % (self.number, pwm_delay)
