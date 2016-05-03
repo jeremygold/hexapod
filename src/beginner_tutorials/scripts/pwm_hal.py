@@ -10,16 +10,16 @@ import os
 from std_msgs.msg import Int16
 from Servo import *
 
-lfh_servo = Servo(6)
-lft_servo = Servo(7)
-lfs_servo = Servo(8)
+rbh_servo = Servo(9)
+rbt_servo = Servo(10)
+rbs_servo = Servo(11)
 
 # Set servo position in degrees
 def setServoPosition(data):
     rospy.loginfo(rospy.get_caller_id() + ' Command Received: %s ', data.data)
-    lfh_servo.set_servo_angle(data.data)
-    lft_servo.set_servo_angle(data.data)
-    lfs_servo.set_servo_angle(data.data)
+    rbh_servo.set_servo_angle(data.data)
+    rbt_servo.set_servo_angle(data.data)
+    rbs_servo.set_servo_angle(data.data)
 
 def led_hal():
     pub = rospy.Publisher('state', Int16, queue_size=10)
@@ -27,9 +27,9 @@ def led_hal():
     rate = rospy.Rate(10) 
 
     while not rospy.is_shutdown():
-        # rospy.loginfo("Servo Position is {:d}".format(lfs_servo.get_servo_angle()))
+        # rospy.loginfo("Servo Position is {:d}".format(rbs_servo.get_servo_angle()))
         # TODO: How do I publish more servo states?
-        pub.publish(lfs_servo.get_servo_angle())
+        pub.publish(rbs_servo.get_servo_angle())
         rate.sleep()
 
 if __name__ == '__main__':
