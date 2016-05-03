@@ -10,7 +10,7 @@ export ROS_MASTER_URI=http://HexapodPi:11311
 if [ "$HOSTNAME" = ubuntu ]; then
     export ROS_IP=192.168.1.123
 else
-    export ROS_IP=192.168.1.122
+    export ROS_IP=192.168.1.128
 fi
 
 source ./devel/setup.zsh
