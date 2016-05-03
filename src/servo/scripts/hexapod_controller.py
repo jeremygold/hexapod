@@ -22,7 +22,7 @@ class JointStatePublisher():
         for side in ["l", "r"]:
             for pos in ["f", "m", "b"]:
                 for joint in ["h", "m", "s"]:
-                    self.joints.Append(side + pos + joint + "_joint")
+                    self.joints.append(side + pos + joint + "_joint")
                         
         self.servos = list()
         self.controllers = list()
@@ -32,7 +32,7 @@ class JointStatePublisher():
             # Remove "_joint" from the end of the joint name to get the controller names.
             servo = joint.split("_joint")[0]
             self.joint_states[joint] = JointStateMessage(joint, 0.0, 0.0, 0.0)
-            self.controllers.append("/hexapod/ + servo + "_position_controller")
+            self.controllers.append("/hexapod/" + servo + "_position_controller")
                            
         # Start controller state subscribers
         [rospy.loginfo("Using controller: " + c) for c in self.controllers]
@@ -48,7 +48,7 @@ class JointStatePublisher():
             r.sleep()
            
     def controller_state_handler(self, msg):
-        js = JointStateMessage(msg.name, msg.current_pos, msg.velocity, msg.load)
+        js = JointStateMessage(msg.name, msg.position, msg.velocity, msg.effort)
 #        rospy.loginfo("jn="+msg.name+",jp="+str(msg.current_pos*100))
         self.joint_states[msg.name] = js
        
