@@ -14,12 +14,28 @@ rbh_servo = Servo(9)
 rbt_servo = Servo(10)
 rbs_servo = Servo(11)
 
+rmh_servo = Servo(12)
+rmt_servo = Servo(13)
+rms_servo = Servo(14)
+
+rfh_servo = Servo(15)
+rft_servo = Servo(16)
+rfs_servo = Servo(17)
+
 # Set servo position in degrees
 def setServoPosition(data):
     rospy.loginfo(rospy.get_caller_id() + ' Command Received: %s ', data.data)
     rbh_servo.set_servo_angle(data.data)
     rbt_servo.set_servo_angle(data.data)
     rbs_servo.set_servo_angle(data.data)
+
+    rmh_servo.set_servo_angle(data.data)
+    rmt_servo.set_servo_angle(data.data)
+    rms_servo.set_servo_angle(data.data)
+
+    rfh_servo.set_servo_angle(data.data)
+    rft_servo.set_servo_angle(data.data)
+    rfs_servo.set_servo_angle(data.data)
 
 def led_hal():
     pub = rospy.Publisher('state', Int16, queue_size=10)
