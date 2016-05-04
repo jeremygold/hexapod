@@ -22,6 +22,18 @@ rfh_servo = Servo(15)
 rft_servo = Servo(16)
 rfs_servo = Servo(17)
 
+lbh_servo = Servo(0)
+lbt_servo = Servo(1)
+lbs_servo = Servo(2)
+
+lmh_servo = Servo(3)
+lmt_servo = Servo(4)
+lms_servo = Servo(5)
+
+lfh_servo = Servo(6)
+lft_servo = Servo(7)
+lfs_servo = Servo(8)
+
 # Set servo position in degrees
 def setServoPosition(data):
     rospy.loginfo(rospy.get_caller_id() + ' Command Received: %s ', data.data)
@@ -36,6 +48,18 @@ def setServoPosition(data):
     rfh_servo.set_servo_angle(data.data)
     rft_servo.set_servo_angle(data.data)
     rfs_servo.set_servo_angle(data.data)
+
+    lbh_servo.set_servo_angle(-data.data)
+    lbt_servo.set_servo_angle(-data.data)
+    lbs_servo.set_servo_angle(-data.data)
+
+    lmh_servo.set_servo_angle(-data.data)
+    lmt_servo.set_servo_angle(-data.data)
+    lms_servo.set_servo_angle(-data.data)
+
+    lfh_servo.set_servo_angle(-data.data)
+    lft_servo.set_servo_angle(-data.data)
+    lfs_servo.set_servo_angle(-data.data)
 
 def led_hal():
     pub = rospy.Publisher('state', Int16, queue_size=10)
