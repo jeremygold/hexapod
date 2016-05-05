@@ -1,0 +1,8 @@
+prefix=/home/pi/PubSubToRpi/install
+
+Name: servo
+Description: Description of servo
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/pi/PubSubToRpi/install/lib 
+Requires: 

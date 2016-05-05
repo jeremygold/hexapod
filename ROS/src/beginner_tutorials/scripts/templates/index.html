@@ -1,0 +1,45 @@
+<!doctype html>
+<head>
+<script type="text/javascript" src="{{ url_for('static', filename='jquery-2.2.3.js')}}"></script>
+
+<script>
+    function setMin() {
+        $.get("/set?value=-90", function(data) {
+            $('#servo_position').html(data);
+        });
+    }
+
+    function setMax() {
+        $.get("/set?value=90", function(data) {
+            $('#servo_position').html(data);
+        });
+    }
+    
+    function setCenter() {
+        $.get("/set?value=0", function(data) {
+            $('#servo_position').html(data);
+        });
+    }
+
+    $(document).ready(function() {
+        $("#value_slider").on("input", function() {
+            $.get("/set?value="+ this.value, function(data) {
+                $('#servo_position').html(data);
+            });
+        });
+    });
+
+</script>
+
+</head>
+<body>
+<title>ROS Servo Control</title>
+<h1>ROS Servo Control</h1>
+<button onclick="setMin()">Min</button>
+<button onclick="setMax()">Max</button>
+<button onclick="setCenter()">Center</button>
+<input type="range" id="value_slider" value="0" min="-90" max="90"></input>
+<div id="servo_position"></div>
+</body>
+
+

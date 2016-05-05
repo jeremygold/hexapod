@@ -1,0 +1,2 @@
+beginner_tutorials:servo
+-DCATKIN_DEVEL_PREFIX=/home/pi/PubSubToRpi/devel -DCMAKE_INSTALL_PREFIX=/home/pi/PubSubToRpi/install -G Unix Makefiles
