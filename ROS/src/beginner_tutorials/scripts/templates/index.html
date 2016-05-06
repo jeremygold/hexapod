@@ -4,6 +4,7 @@
     <script type="text/javascript" src="{{ url_for('static', filename='jquery-2.2.3.js')}}"></script>
 
     <script>
+
 function setCenter() {
     $.get("/hip?value=0", function(data) {
         $('#hip_position').html(data);
@@ -14,6 +15,10 @@ function setCenter() {
     $.get("/shin?value=0", function(data) {
         $('#shin_position').html(data);
     });
+
+    document.getElementById("hip_slider").value = 0;
+    document.getElementById("thigh_slider").value = 0;
+    document.getElementById("shin_slider").value = 0;
 }
 
 $(document).ready(function() {
@@ -32,6 +37,8 @@ $(document).ready(function() {
             $('#shin_position').html(data);
         });
     });
+
+    setCenter();
 });
 
     </script>
@@ -41,6 +48,8 @@ $(document).ready(function() {
     <title>Hexapod Servo Control</title>
     <h1>Hexapod Servo Control</h1>
     <button onclick="setCenter()">Center all</button>
+
+    <p>
 
     <table style="width:500px" border="1">
         <col width=50px>
