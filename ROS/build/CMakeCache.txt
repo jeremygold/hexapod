@@ -307,6 +307,12 @@ gtest_force_shared_crt:BOOL=OFF
 //Dependencies for the target
 gtest_main_LIB_DEPENDS:STATIC=general;-lpthread;general;gtest;
 
+//Value Computed by CMake
+hexapod_controller_BINARY_DIR:STATIC=/home/pi/hexapod/ROS/build/hexapod_controller
+
+//Value Computed by CMake
+hexapod_controller_SOURCE_DIR:STATIC=/home/pi/hexapod/ROS/src/hexapod_controller
+
 //Path to a library.
 lib:FILEPATH=/opt/ros/indigo/lib/libtf2.so
 
@@ -471,7 +477,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_LOCAL_GENERATORS:INTERNAL=4
+CMAKE_NUMBER_OF_LOCAL_GENERATORS:INTERNAL=5
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

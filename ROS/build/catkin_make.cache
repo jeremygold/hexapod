@@ -1,2 +1,2 @@
-beginner_tutorials:servo
+beginner_tutorials:hexapod_controller:servo
 -DCATKIN_DEVEL_PREFIX=/home/pi/hexapod/ROS/devel -DCMAKE_INSTALL_PREFIX=/home/pi/hexapod/ROS/install -G Unix Makefiles
