@@ -6,6 +6,7 @@
 # testing this directory and lists subdirectories to be tested as well.
 subdirs(gtest)
 subdirs(hexapod_app)
+subdirs(hexapod_test)
 subdirs(hexapod_controller)
 subdirs(servo)
 subdirs(web_control)

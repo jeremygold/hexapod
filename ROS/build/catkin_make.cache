@@ -1,2 +1,2 @@
-hexapod_app:hexapod_controller:servo:web_control
+hexapod_app:hexapod_controller:hexapod_test:servo:web_control
 -DCATKIN_DEVEL_PREFIX=/home/pi/hexapod/ROS/devel -DCMAKE_INSTALL_PREFIX=/home/pi/hexapod/ROS/install -G Unix Makefiles

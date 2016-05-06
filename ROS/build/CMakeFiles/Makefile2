@@ -588,6 +588,21 @@ clean: hexapod_app/CMakeFiles/std_msgs_generate_messages_py.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Directory level rules for directory hexapod_test
+
+# Convenience name for "all" pass in the directory.
+hexapod_test/all:
+.PHONY : hexapod_test/all
+
+# Convenience name for "clean" pass in the directory.
+hexapod_test/clean:
+.PHONY : hexapod_test/clean
+
+# Convenience name for "preinstall" pass in the directory.
+hexapod_test/preinstall:
+.PHONY : hexapod_test/preinstall
+
+#=============================================================================
 # Directory level rules for directory hexapod_controller
 
 # Convenience name for "all" pass in the directory.
