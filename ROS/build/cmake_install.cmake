@@ -117,9 +117,10 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/pi/hexapod/ROS/build/gtest/cmake_install.cmake")
-  include("/home/pi/hexapod/ROS/build/beginner_tutorials/cmake_install.cmake")
+  include("/home/pi/hexapod/ROS/build/hexapod_app/cmake_install.cmake")
   include("/home/pi/hexapod/ROS/build/hexapod_controller/cmake_install.cmake")
   include("/home/pi/hexapod/ROS/build/servo/cmake_install.cmake")
+  include("/home/pi/hexapod/ROS/build/web_control/cmake_install.cmake")
 
 endif()
 
