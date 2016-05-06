@@ -17,21 +17,21 @@ def index():
 
 @app.route("/hip")
 def setHip():
-    value = int(request.args.get("hip"))
+    value = int(request.args.get("value"))
     rospy.loginfo("Setting Hip Position value to {0:d}".format(value))
     hip_pub.publish(value)
     return "Hip value {0:d}".format(value)
 
 @app.route("/thigh")
 def setThigh():
-    value = int(request.args.get("thigh"))
+    value = int(request.args.get("value"))
     rospy.loginfo("Setting Thigh Position value to {0:d}".format(value))
     thigh_pub.publish(value)
     return "Thigh value {0:d}".format(value)
 
 @app.route("/shin")
-def setShin):
-    value = int(request.args.get("shin"))
+def setShin():
+    value = int(request.args.get("value"))
     rospy.loginfo("Setting Shin Position value to {0:d}".format(value))
     shin_pub.publish(value)
     return "Shin value {0:d}".format(value)
