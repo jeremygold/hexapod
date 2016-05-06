@@ -1,8 +1,8 @@
-prefix=/home/pi/PubSubToRpi/install
+prefix=/home/pi/hexapod/ROS/install
 
 Name: servo
 Description: Description of servo
 Version: 0.0.0
 Cflags: 
-Libs: -L/home/pi/PubSubToRpi/install/lib 
+Libs: -L/home/pi/hexapod/ROS/install/lib 
 Requires: 

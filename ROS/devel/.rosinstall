@@ -1,2 +1,2 @@
 - setup-file:
-    local-name: /home/pi/PubSubToRpi/devel/setup.sh
+    local-name: /home/pi/hexapod/ROS/devel/setup.sh

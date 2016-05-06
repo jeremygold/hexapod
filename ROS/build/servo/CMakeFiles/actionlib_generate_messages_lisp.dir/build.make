@@ -35,10 +35,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/pi/PubSubToRpi/src
+CMAKE_SOURCE_DIR = /home/pi/hexapod/ROS/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/pi/PubSubToRpi/build
+CMAKE_BINARY_DIR = /home/pi/hexapod/ROS/build
 
 # Utility rule file for actionlib_generate_messages_lisp.
 
@@ -56,10 +56,10 @@ servo/CMakeFiles/actionlib_generate_messages_lisp.dir/build: actionlib_generate_
 .PHONY : servo/CMakeFiles/actionlib_generate_messages_lisp.dir/build
 
 servo/CMakeFiles/actionlib_generate_messages_lisp.dir/clean:
-	cd /home/pi/PubSubToRpi/build/servo && $(CMAKE_COMMAND) -P CMakeFiles/actionlib_generate_messages_lisp.dir/cmake_clean.cmake
+	cd /home/pi/hexapod/ROS/build/servo && $(CMAKE_COMMAND) -P CMakeFiles/actionlib_generate_messages_lisp.dir/cmake_clean.cmake
 .PHONY : servo/CMakeFiles/actionlib_generate_messages_lisp.dir/clean
 
 servo/CMakeFiles/actionlib_generate_messages_lisp.dir/depend:
-	cd /home/pi/PubSubToRpi/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/pi/PubSubToRpi/src /home/pi/PubSubToRpi/src/servo /home/pi/PubSubToRpi/build /home/pi/PubSubToRpi/build/servo /home/pi/PubSubToRpi/build/servo/CMakeFiles/actionlib_generate_messages_lisp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/pi/hexapod/ROS/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/pi/hexapod/ROS/src /home/pi/hexapod/ROS/src/servo /home/pi/hexapod/ROS/build /home/pi/hexapod/ROS/build/servo /home/pi/hexapod/ROS/build/servo/CMakeFiles/actionlib_generate_messages_lisp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : servo/CMakeFiles/actionlib_generate_messages_lisp.dir/depend
 

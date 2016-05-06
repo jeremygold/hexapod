@@ -1,8 +1,8 @@
-prefix=/home/pi/PubSubToRpi/devel
+prefix=/home/pi/hexapod/ROS/devel
 
 Name: beginner_tutorials
 Description: Description of beginner_tutorials
 Version: 0.0.0
 Cflags: 
-Libs: -L/home/pi/PubSubToRpi/devel/lib 
+Libs: -L/home/pi/hexapod/ROS/devel/lib 
 Requires: 

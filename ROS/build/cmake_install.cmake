@@ -1,8 +1,8 @@
-# Install script for directory: /home/pi/PubSubToRpi/src
+# Install script for directory: /home/pi/hexapod/ROS/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/pi/PubSubToRpi/install")
+  set(CMAKE_INSTALL_PREFIX "/home/pi/hexapod/ROS/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -44,81 +44,81 @@ endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/pi/PubSubToRpi/install/_setup_util.py")
+   "/home/pi/hexapod/ROS/install/_setup_util.py")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/pi/PubSubToRpi/install" TYPE PROGRAM FILES "/home/pi/PubSubToRpi/build/catkin_generated/installspace/_setup_util.py")
+file(INSTALL DESTINATION "/home/pi/hexapod/ROS/install" TYPE PROGRAM FILES "/home/pi/hexapod/ROS/build/catkin_generated/installspace/_setup_util.py")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/pi/PubSubToRpi/install/env.sh")
+   "/home/pi/hexapod/ROS/install/env.sh")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/pi/PubSubToRpi/install" TYPE PROGRAM FILES "/home/pi/PubSubToRpi/build/catkin_generated/installspace/env.sh")
+file(INSTALL DESTINATION "/home/pi/hexapod/ROS/install" TYPE PROGRAM FILES "/home/pi/hexapod/ROS/build/catkin_generated/installspace/env.sh")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/pi/PubSubToRpi/install/setup.bash")
+   "/home/pi/hexapod/ROS/install/setup.bash")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/pi/PubSubToRpi/install" TYPE FILE FILES "/home/pi/PubSubToRpi/build/catkin_generated/installspace/setup.bash")
+file(INSTALL DESTINATION "/home/pi/hexapod/ROS/install" TYPE FILE FILES "/home/pi/hexapod/ROS/build/catkin_generated/installspace/setup.bash")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/pi/PubSubToRpi/install/setup.sh")
+   "/home/pi/hexapod/ROS/install/setup.sh")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/pi/PubSubToRpi/install" TYPE FILE FILES "/home/pi/PubSubToRpi/build/catkin_generated/installspace/setup.sh")
+file(INSTALL DESTINATION "/home/pi/hexapod/ROS/install" TYPE FILE FILES "/home/pi/hexapod/ROS/build/catkin_generated/installspace/setup.sh")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/pi/PubSubToRpi/install/setup.zsh")
+   "/home/pi/hexapod/ROS/install/setup.zsh")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/pi/PubSubToRpi/install" TYPE FILE FILES "/home/pi/PubSubToRpi/build/catkin_generated/installspace/setup.zsh")
+file(INSTALL DESTINATION "/home/pi/hexapod/ROS/install" TYPE FILE FILES "/home/pi/hexapod/ROS/build/catkin_generated/installspace/setup.zsh")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/pi/PubSubToRpi/install/.rosinstall")
+   "/home/pi/hexapod/ROS/install/.rosinstall")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/pi/PubSubToRpi/install" TYPE FILE FILES "/home/pi/PubSubToRpi/build/catkin_generated/installspace/.rosinstall")
+file(INSTALL DESTINATION "/home/pi/hexapod/ROS/install" TYPE FILE FILES "/home/pi/hexapod/ROS/build/catkin_generated/installspace/.rosinstall")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/pi/PubSubToRpi/build/gtest/cmake_install.cmake")
-  include("/home/pi/PubSubToRpi/build/beginner_tutorials/cmake_install.cmake")
-  include("/home/pi/PubSubToRpi/build/servo/cmake_install.cmake")
+  include("/home/pi/hexapod/ROS/build/gtest/cmake_install.cmake")
+  include("/home/pi/hexapod/ROS/build/beginner_tutorials/cmake_install.cmake")
+  include("/home/pi/hexapod/ROS/build/servo/cmake_install.cmake")
 
 endif()
 
@@ -128,7 +128,7 @@ else()
   set(CMAKE_INSTALL_MANIFEST "install_manifest.txt")
 endif()
 
-file(WRITE "/home/pi/PubSubToRpi/build/${CMAKE_INSTALL_MANIFEST}" "")
+file(WRITE "/home/pi/hexapod/ROS/build/${CMAKE_INSTALL_MANIFEST}" "")
 foreach(file ${CMAKE_INSTALL_MANIFEST_FILES})
-  file(APPEND "/home/pi/PubSubToRpi/build/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
+  file(APPEND "/home/pi/hexapod/ROS/build/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
 endforeach()

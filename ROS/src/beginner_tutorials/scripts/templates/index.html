@@ -3,28 +3,32 @@
 <script type="text/javascript" src="{{ url_for('static', filename='jquery-2.2.3.js')}}"></script>
 
 <script>
-    function setMin() {
-        $.get("/set?value=-90", function(data) {
-            $('#servo_position').html(data);
-        });
-    }
-
-    function setMax() {
-        $.get("/set?value=90", function(data) {
-            $('#servo_position').html(data);
-        });
-    }
-    
     function setCenter() {
-        $.get("/set?value=0", function(data) {
-            $('#servo_position').html(data);
+        $.get("/hip?value=0", function(data) {
+            $('#hip_position').html(data);
+        });
+        $.get("/thigh?value=0", function(data) {
+            $('#thigh_position').html(data);
+        });
+        $.get("/shin?value=0", function(data) {
+            $('#shin_position').html(data);
         });
     }
 
     $(document).ready(function() {
-        $("#value_slider").on("input", function() {
-            $.get("/set?value="+ this.value, function(data) {
-                $('#servo_position').html(data);
+        $("#hip_slider").on("input", function() {
+            $.get("/hip?value="+ this.value, function(data) {
+                $('#hip_position').html(data);
+            });
+        });
+        $("#thigh_slider").on("input", function() {
+            $.get("/thigh?value="+ this.value, function(data) {
+                $('#thigh_position').html(data);
+            });
+        });
+        $("#shin_slider").on("input", function() {
+            $.get("/shin?value="+ this.value, function(data) {
+                $('#shin_position').html(data);
             });
         });
     });
@@ -33,13 +37,16 @@
 
 </head>
 <body>
-<title>ROS Servo Control</title>
-<h1>ROS Servo Control</h1>
-<button onclick="setMin()">Min</button>
-<button onclick="setMax()">Max</button>
-<button onclick="setCenter()">Center</button>
-<input type="range" id="value_slider" value="0" min="-90" max="90"></input>
-<div id="servo_position"></div>
-</body>
+<title>Hexapod Servo Control</title>
+<h1>Hexapod Servo Control</h1>
+<button onclick="setCenter()">Center all</button>
 
+<input type="range" id="hip_slider" value="0" min="-90" max="90"></input>
+<input type="range" id="thigh_slider" value="0" min="-90" max="90"></input>
+<input type="range" id="shin_slider" value="0" min="-90" max="90"></input>
+
+<div id="hip_position"></div>
+<div id="thigh_position"></div>
+<div id="shin_position"></div>
+</body>
 

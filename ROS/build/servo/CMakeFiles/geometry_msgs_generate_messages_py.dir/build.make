@@ -35,10 +35,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/pi/PubSubToRpi/src
+CMAKE_SOURCE_DIR = /home/pi/hexapod/ROS/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/pi/PubSubToRpi/build
+CMAKE_BINARY_DIR = /home/pi/hexapod/ROS/build
 
 # Utility rule file for geometry_msgs_generate_messages_py.
 
@@ -56,10 +56,10 @@ servo/CMakeFiles/geometry_msgs_generate_messages_py.dir/build: geometry_msgs_gen
 .PHONY : servo/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
 
 servo/CMakeFiles/geometry_msgs_generate_messages_py.dir/clean:
-	cd /home/pi/PubSubToRpi/build/servo && $(CMAKE_COMMAND) -P CMakeFiles/geometry_msgs_generate_messages_py.dir/cmake_clean.cmake
+	cd /home/pi/hexapod/ROS/build/servo && $(CMAKE_COMMAND) -P CMakeFiles/geometry_msgs_generate_messages_py.dir/cmake_clean.cmake
 .PHONY : servo/CMakeFiles/geometry_msgs_generate_messages_py.dir/clean
 
 servo/CMakeFiles/geometry_msgs_generate_messages_py.dir/depend:
-	cd /home/pi/PubSubToRpi/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/pi/PubSubToRpi/src /home/pi/PubSubToRpi/src/servo /home/pi/PubSubToRpi/build /home/pi/PubSubToRpi/build/servo /home/pi/PubSubToRpi/build/servo/CMakeFiles/geometry_msgs_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/pi/hexapod/ROS/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/pi/hexapod/ROS/src /home/pi/hexapod/ROS/src/servo /home/pi/hexapod/ROS/build /home/pi/hexapod/ROS/build/servo /home/pi/hexapod/ROS/build/servo/CMakeFiles/geometry_msgs_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : servo/CMakeFiles/geometry_msgs_generate_messages_py.dir/depend
 

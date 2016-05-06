@@ -1,8 +1,8 @@
-# Install script for directory: /home/pi/PubSubToRpi/src/servo
+# Install script for directory: /home/pi/hexapod/ROS/src/servo
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/pi/PubSubToRpi/install")
+  set(CMAKE_INSTALL_PREFIX "/home/pi/hexapod/ROS/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -33,17 +33,17 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/pi/PubSubToRpi/build/servo/catkin_generated/installspace/servo.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/pi/hexapod/ROS/build/servo/catkin_generated/installspace/servo.pc")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/servo/cmake" TYPE FILE FILES
-    "/home/pi/PubSubToRpi/build/servo/catkin_generated/installspace/servoConfig.cmake"
-    "/home/pi/PubSubToRpi/build/servo/catkin_generated/installspace/servoConfig-version.cmake"
+    "/home/pi/hexapod/ROS/build/servo/catkin_generated/installspace/servoConfig.cmake"
+    "/home/pi/hexapod/ROS/build/servo/catkin_generated/installspace/servoConfig-version.cmake"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/servo" TYPE FILE FILES "/home/pi/PubSubToRpi/src/servo/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/servo" TYPE FILE FILES "/home/pi/hexapod/ROS/src/servo/package.xml")
 endif()
 

@@ -35,10 +35,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/pi/PubSubToRpi/src
+CMAKE_SOURCE_DIR = /home/pi/hexapod/ROS/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/pi/PubSubToRpi/build
+CMAKE_BINARY_DIR = /home/pi/hexapod/ROS/build
 
 # Utility rule file for std_msgs_generate_messages_cpp.
 
@@ -56,10 +56,10 @@ beginner_tutorials/CMakeFiles/std_msgs_generate_messages_cpp.dir/build: std_msgs
 .PHONY : beginner_tutorials/CMakeFiles/std_msgs_generate_messages_cpp.dir/build
 
 beginner_tutorials/CMakeFiles/std_msgs_generate_messages_cpp.dir/clean:
-	cd /home/pi/PubSubToRpi/build/beginner_tutorials && $(CMAKE_COMMAND) -P CMakeFiles/std_msgs_generate_messages_cpp.dir/cmake_clean.cmake
+	cd /home/pi/hexapod/ROS/build/beginner_tutorials && $(CMAKE_COMMAND) -P CMakeFiles/std_msgs_generate_messages_cpp.dir/cmake_clean.cmake
 .PHONY : beginner_tutorials/CMakeFiles/std_msgs_generate_messages_cpp.dir/clean
 
 beginner_tutorials/CMakeFiles/std_msgs_generate_messages_cpp.dir/depend:
-	cd /home/pi/PubSubToRpi/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/pi/PubSubToRpi/src /home/pi/PubSubToRpi/src/beginner_tutorials /home/pi/PubSubToRpi/build /home/pi/PubSubToRpi/build/beginner_tutorials /home/pi/PubSubToRpi/build/beginner_tutorials/CMakeFiles/std_msgs_generate_messages_cpp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/pi/hexapod/ROS/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/pi/hexapod/ROS/src /home/pi/hexapod/ROS/src/beginner_tutorials /home/pi/hexapod/ROS/build /home/pi/hexapod/ROS/build/beginner_tutorials /home/pi/hexapod/ROS/build/beginner_tutorials/CMakeFiles/std_msgs_generate_messages_cpp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : beginner_tutorials/CMakeFiles/std_msgs_generate_messages_cpp.dir/depend
 

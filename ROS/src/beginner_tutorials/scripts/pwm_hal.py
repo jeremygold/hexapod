@@ -35,35 +35,38 @@ lft_servo = Servo(7)
 lfs_servo = Servo(8)
 
 # Set servo position in degrees
-def setServoPosition(data):
+def setHipPosition(data):
     rospy.loginfo(rospy.get_caller_id() + ' Command Received: %s ', data.data)
     rbh_servo.set_servo_angle(data.data)
-    rbt_servo.set_servo_angle(data.data)
-    rbs_servo.set_servo_angle(data.data)
-
     rmh_servo.set_servo_angle(data.data)
-    rmt_servo.set_servo_angle(data.data)
-    rms_servo.set_servo_angle(data.data)
-
     rfh_servo.set_servo_angle(data.data)
-    rft_servo.set_servo_angle(data.data)
-    rfs_servo.set_servo_angle(data.data)
-
     lbh_servo.set_servo_angle(-data.data)
-    lbt_servo.set_servo_angle(-data.data)
-    lbs_servo.set_servo_angle(-data.data)
-
     lmh_servo.set_servo_angle(-data.data)
-    lmt_servo.set_servo_angle(-data.data)
-    lms_servo.set_servo_angle(-data.data)
-
     lfh_servo.set_servo_angle(-data.data)
+
+def setThighPosition(data):
+    rospy.loginfo(rospy.get_caller_id() + ' Command Received: %s ', data.data)
+    rbt_servo.set_servo_angle(data.data)
+    rmt_servo.set_servo_angle(data.data)
+    rft_servo.set_servo_angle(data.data)
+    lbt_servo.set_servo_angle(-data.data)
+    lmt_servo.set_servo_angle(-data.data)
     lft_servo.set_servo_angle(-data.data)
+
+def setShinPosition(data):
+    rospy.loginfo(rospy.get_caller_id() + ' Command Received: %s ', data.data)
+    rbs_servo.set_servo_angle(data.data)
+    rms_servo.set_servo_angle(data.data)
+    rfs_servo.set_servo_angle(data.data)
+    lbs_servo.set_servo_angle(-data.data)
+    lms_servo.set_servo_angle(-data.data)
     lfs_servo.set_servo_angle(-data.data)
 
 def led_hal():
     pub = rospy.Publisher('state', Int16, queue_size=10)
-    rospy.Subscriber('command', Int16, setServoPosition)
+    rospy.Subscriber('hip', Int16, setHipPosition)
+    rospy.Subscriber('thigh', Int16, setThighPosition)
+    rospy.Subscriber('shin', Int16, setShinPosition)
     rate = rospy.Rate(10) 
 
     while not rospy.is_shutdown():
