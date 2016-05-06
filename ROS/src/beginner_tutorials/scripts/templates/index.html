@@ -1,0 +1,63 @@
+<!doctype html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='hexapod.css')}}">
+    <script type="text/javascript" src="{{ url_for('static', filename='jquery-2.2.3.js')}}"></script>
+
+    <script>
+
+function setCenter() {
+    $.get("/hip?value=0", function(data) {
+        $('#hip_position').html(data);
+    });
+    $.get("/thigh?value=0", function(data) {
+        $('#thigh_position').html(data);
+    });
+    $.get("/shin?value=0", function(data) {
+        $('#shin_position').html(data);
+    });
+
+    document.getElementById("hip_slider").value = 0;
+    document.getElementById("thigh_slider").value = 0;
+    document.getElementById("shin_slider").value = 0;
+}
+
+$(document).ready(function() {
+    $("#hip_slider").on("input", function() {
+        $.get("/hip?value="+ this.value, function(data) {
+            $('#hip_position').html(data);
+        });
+    });
+    $("#thigh_slider").on("input", function() {
+        $.get("/thigh?value="+ this.value, function(data) {
+            $('#thigh_position').html(data);
+        });
+    });
+    $("#shin_slider").on("input", function() {
+        $.get("/shin?value="+ this.value, function(data) {
+            $('#shin_position').html(data);
+        });
+    });
+
+    setCenter();
+});
+
+    </script>
+
+</head>
+<body>
+    <title>Hexapod Servo Control</title>
+    <h1>Hexapod Servo Control</h1>
+    <button onclick="setCenter()">Center all</button>
+
+    <p>
+
+    <table style="width:500px" border="1">
+        <col width=50px>
+        <col width=320px>
+
+        <tr><td>Hip</td><td><input type="range" id="hip_slider" class="slider-width" value="0" min="-55" max="55"></input></td><td><div id="hip_position"></div></td></tr>
+        <tr><td>Thigh</td><td><input type="range" id="thigh_slider" class="slider-width" value="0" min="-50" max="90"></input></td><td><div id="thigh_position"></div></td></tr>
+        <tr><td>Shin</td><td><input type="range" id="shin_slider" class="slider-width" value="0" min="-50" max="90"></input></td><td><div id="shin_position"></div></td></tr>
+    </table>
+</body>
+
