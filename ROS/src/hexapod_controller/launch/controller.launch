@@ -1,5 +1,8 @@
 <launch>
         <node name="state_publisher" pkg="hexapod_controller" type="state_publisher.py" />
         <node name="hexapod_controller" pkg="hexapod_controller" type="hexapod_controller.py" />
+
+        <node name="web_server" pkg="beginner_tutorials" type="pwm_web_control.py" />
+        <node name="pwm_hal" pkg="beginner_tutorials" type="pwm_hal.py" />[
 </launch>
 
