@@ -7,8 +7,6 @@
 # new environment variables
 
 # modified environment variables
-export CMAKE_PREFIX_PATH="/home/pi/hexapod/ROS/devel:$CMAKE_PREFIX_PATH"
-export LD_LIBRARY_PATH="/home/pi/hexapod/ROS/devel/lib:$LD_LIBRARY_PATH"
-export PKG_CONFIG_PATH="/home/pi/hexapod/ROS/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
+export LD_LIBRARY_PATH="/opt/ros/indigo/lib"
+export PKG_CONFIG_PATH="/opt/ros/indigo/lib/pkgconfig"
 export PWD="/home/pi/hexapod/ROS/build"
-export ROS_PACKAGE_PATH="/home/pi/hexapod/ROS/src:$ROS_PACKAGE_PATH"
