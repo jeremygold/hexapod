@@ -41,9 +41,9 @@ def init_servos():
     servos['/right/mid/thigh'] = Servo(13)
     servos['/right/mid/shin'] = Servo(14)
 
-    servos['/right/front/hip'] = Servo(12)
-    servos['/right/front/thigh'] = Servo(13)
-    servos['/right/front/shin'] = Servo(14)
+    servos['/right/front/hip'] = Servo(15)
+    servos['/right/front/thigh'] = Servo(16)
+    servos['/right/front/shin'] = Servo(17)
 
 def monitor_servos():
     rospy.Subscriber('/joint_states', JointState, set_joint_position)
@@ -51,7 +51,7 @@ def monitor_servos():
 
 if __name__ == '__main__':
     try:
-        rospy.init_node('servo_hal', anonymous=False)
+        rospy.init_node('servo_driver', anonymous=False)
         init_servos()
         monitor_servos()
 
