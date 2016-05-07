@@ -8,6 +8,7 @@ import rospy
 import os
 
 from std_msgs.msg import Int16
+from sensor_msgs.msg import JointState
 from Servo import *
 
 rbh_servo = Servo(9)
@@ -35,51 +36,32 @@ lft_servo = Servo(7)
 lfs_servo = Servo(8)
 
 # Set servo position in degrees
-def setHipPosition(data):
-    rospy.loginfo(rospy.get_caller_id() + ' Command Received: %s ', data.data)
-    rbh_servo.set_servo_angle(data.data)
-    rmh_servo.set_servo_angle(data.data)
-    rfh_servo.set_servo_angle(data.data)
-    lbh_servo.set_servo_angle(-data.data)
-    lmh_servo.set_servo_angle(-data.data)
-    lfh_servo.set_servo_angle(-data.data)
+def set_joint_position(joint_state):
+    rospy.loginfo("In set_joint_position, joint_state = %s", repr(joint_state))
 
-def setThighPosition(data):
-    rospy.loginfo(rospy.get_caller_id() + ' Command Received: %s ', data.data)
-    rbt_servo.set_servo_angle(data.data)
-    rmt_servo.set_servo_angle(data.data)
-    rft_servo.set_servo_angle(data.data)
-    lbt_servo.set_servo_angle(-data.data)
-    lmt_servo.set_servo_angle(-data.data)
-    lft_servo.set_servo_angle(-data.data)
+    for index, name in enumerate(joint_state.name):
+        # set_servo_pos(joint.name, joint.position)
+        position = joint_state.position[index]
 
-def setShinPosition(data):
-    rospy.loginfo(rospy.get_caller_id() + ' Command Received: %s ', data.data)
-    rbs_servo.set_servo_angle(data.data)
-    rms_servo.set_servo_angle(data.data)
-    rfs_servo.set_servo_angle(data.data)
-    lbs_servo.set_servo_angle(-data.data)
-    lms_servo.set_servo_angle(-data.data)
-    lfs_servo.set_servo_angle(-data.data)
+        if name == "/left/front/hip":
+            rospy.loginfo("Setting %s to %d", name, position)
+            lfh_servo.set_servo_angle(position)
+        elif name == "/left/front/thigh":
+            rospy.loginfo("Setting %s to %d", name, position)
+            lft_servo.set_servo_angle(position)
+        elif name == "/left/front/shin":
+            lfs_servo.set_servo_angle(position)
+            rospy.loginfo("Setting %s to %d", name, position)
 
-def led_hal():
-    pub = rospy.Publisher('state', Int16, queue_size=10)
-    rospy.Subscriber('hip', Int16, setHipPosition)
-    rospy.Subscriber('thigh', Int16, setThighPosition)
-    rospy.Subscriber('shin', Int16, setShinPosition)
-    rate = rospy.Rate(10) 
-
-    while not rospy.is_shutdown():
-        # rospy.loginfo("Servo Position is {:d}".format(rbs_servo.get_servo_angle()))
-        # TODO: How do I publish more servo states?
-        pub.publish(rbs_servo.get_servo_angle())
-        rate.sleep()
+def monitor_servos():
+    rospy.Subscriber('/joint_states', JointState, set_joint_position)
+    rospy.spin()
 
 if __name__ == '__main__':
     try:
         rospy.init_node('servo_hal', anonymous=False)
         rospy.loginfo("Initializing")
-        led_hal()
+        monitor_servos()
 
     except rospy.ROSInterruptException:
         pass
