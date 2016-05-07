@@ -8,7 +8,7 @@ class JointStatePublisher():
     def __init__(self):
         rospy.init_node('hexapod_controller', anonymous=False)
 
-        rate = rospy.get_param('~rate', 2)
+        rate = rospy.get_param('~rate', 30)
         r = rospy.Rate(rate)
         
         self.joints = list()

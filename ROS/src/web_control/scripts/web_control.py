@@ -40,10 +40,11 @@ def initRospy():
     global hip_pub
     global thigh_pub
     global shin_pub
-    rospy.init_node('web_servo_control', anonymous=True)
-    hip_pub = rospy.Publisher('hip', Int16, queue_size=10)
-    thigh_pub = rospy.Publisher('thigh', Int16, queue_size=10)
-    shin_pub = rospy.Publisher('shin', Int16, queue_size=10)
+    rospy.init_node('web_control', anonymous=True)
+
+    hip_pub = rospy.Publisher('/left/front/hip/command', Int16, queue_size=10)
+    thigh_pub = rospy.Publisher('/left/front/thigh/command', Int16, queue_size=10)
+    shin_pub = rospy.Publisher('/left/front/shin/command', Int16, queue_size=10)
 
 def sigintHandler(signal, frame):
     rospy.loginfo("Terminating webserver")

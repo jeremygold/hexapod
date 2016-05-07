@@ -37,21 +37,17 @@ lfs_servo = Servo(8)
 
 # Set servo position in degrees
 def set_joint_position(joint_state):
-    rospy.loginfo("In set_joint_position, joint_state = %s", repr(joint_state))
+    # rospy.loginfo("In set_joint_position, joint_state = %s", repr(joint_state))
 
     for index, name in enumerate(joint_state.name):
-        # set_servo_pos(joint.name, joint.position)
         position = joint_state.position[index]
 
         if name == "/left/front/hip":
-            rospy.loginfo("Setting %s to %d", name, position)
             lfh_servo.set_servo_angle(position)
         elif name == "/left/front/thigh":
-            rospy.loginfo("Setting %s to %d", name, position)
             lft_servo.set_servo_angle(position)
         elif name == "/left/front/shin":
             lfs_servo.set_servo_angle(position)
-            rospy.loginfo("Setting %s to %d", name, position)
 
 def monitor_servos():
     rospy.Subscriber('/joint_states', JointState, set_joint_position)
