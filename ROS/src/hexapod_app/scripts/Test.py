@@ -7,7 +7,7 @@ from Leg import Leg
 from numpy import arange
 import time
 
-delay = 0.5
+delay = 0.3
 
 def test_joint(joint):
     joint.set_joint_angle(20)
@@ -132,6 +132,6 @@ def test_legs():
 if __name__ == '__main__':
     rospy.init_node('hexapod_app_test', anonymous=True)
 
-    # test_joints()
+    test_joints()
     test_legs()
 
