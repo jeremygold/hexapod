@@ -12,8 +12,31 @@ def test_joint(joint):
     joint.set_joint_angle(0)
     sleep(delay)
 
-if __name__ == '__main__':
-    rospy.init_node('hexapod_app_test', anonymous=True)
+def init_joints():
+    global left_front_hip
+    global left_front_thigh
+    global left_front_shin
+
+    global left_mid_hip
+    global left_mid_thigh
+    global left_mid_shin
+
+    global left_back_hip
+    global left_back_thigh
+    global left_back_shin
+
+    global right_front_hip
+    global right_front_thigh
+    global right_front_shin
+
+    global right_mid_hip
+    global right_mid_thigh
+    global right_mid_shin
+
+    global right_back_hip
+    global right_back_thigh
+    global right_back_shin
+
     left_front_hip = Joint("/left/front/hip")
     left_mid_hip = Joint("/left/mid/hip")
     left_back_hip = Joint("/left/back/hip")
@@ -38,8 +61,7 @@ if __name__ == '__main__':
     right_mid_shin = Joint("/right/mid/shin")
     right_back_shin = Joint("/right/back/shin")
 
-    sleep(1)
-
+def test_joints():
     test_joint(left_front_hip)
     test_joint(left_mid_hip)
     test_joint(left_back_hip)
@@ -63,3 +85,11 @@ if __name__ == '__main__':
     test_joint(right_front_shin)
     test_joint(right_mid_shin)
     test_joint(right_back_shin)
+
+if __name__ == '__main__':
+    rospy.init_node('hexapod_app_test', anonymous=True)
+    init_joints()
+    sleep(1)
+
+    test_joints()
+
