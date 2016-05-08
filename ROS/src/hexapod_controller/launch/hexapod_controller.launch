@@ -1,0 +1,5 @@
+<launch>
+        <node name="hexapod_controller" pkg="hexapod_controller" type="hexapod_controller.py" />
+        <node name="servo_driver" pkg="servo" type="servo_driver.py" />
+</launch>
+

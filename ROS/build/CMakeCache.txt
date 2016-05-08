@@ -255,12 +255,6 @@ actionlib_DIR:PATH=/opt/ros/indigo/share/actionlib/cmake
 //The directory containing a CMake configuration file for actionlib_msgs.
 actionlib_msgs_DIR:PATH=/opt/ros/indigo/share/actionlib_msgs/cmake
 
-//Value Computed by CMake
-beginner_tutorials_BINARY_DIR:STATIC=/home/pi/hexapod/ROS/build/beginner_tutorials
-
-//Value Computed by CMake
-beginner_tutorials_SOURCE_DIR:STATIC=/home/pi/hexapod/ROS/src/beginner_tutorials
-
 //The directory containing a CMake configuration file for catkin.
 catkin_DIR:PATH=/opt/ros/indigo/share/catkin/cmake
 
@@ -307,8 +301,26 @@ gtest_force_shared_crt:BOOL=OFF
 //Dependencies for the target
 gtest_main_LIB_DEPENDS:STATIC=general;-lpthread;general;gtest;
 
+//Value Computed by CMake
+hexapod_app_BINARY_DIR:STATIC=/home/pi/hexapod/ROS/build/hexapod_app
+
+//Value Computed by CMake
+hexapod_app_SOURCE_DIR:STATIC=/home/pi/hexapod/ROS/src/hexapod_app
+
+//Value Computed by CMake
+hexapod_controller_BINARY_DIR:STATIC=/home/pi/hexapod/ROS/build/hexapod_controller
+
+//Value Computed by CMake
+hexapod_controller_SOURCE_DIR:STATIC=/home/pi/hexapod/ROS/src/hexapod_controller
+
+//Value Computed by CMake
+hexapod_test_BINARY_DIR:STATIC=/home/pi/hexapod/ROS/build/hexapod_test
+
+//Value Computed by CMake
+hexapod_test_SOURCE_DIR:STATIC=/home/pi/hexapod/ROS/src/hexapod_test
+
 //Path to a library.
-lib:FILEPATH=/opt/ros/indigo/lib/libtf2.so
+lib:FILEPATH=/opt/ros/indigo/lib/librostime.so
 
 //The directory containing a CMake configuration file for message_filters.
 message_filters_DIR:PATH=/opt/ros/indigo/share/message_filters/cmake
@@ -369,6 +381,12 @@ tf2_ros_DIR:PATH=/opt/ros/indigo/share/tf2_ros/cmake
 
 //The directory containing a CMake configuration file for tf.
 tf_DIR:PATH=/opt/ros/indigo/share/tf/cmake
+
+//Value Computed by CMake
+web_control_BINARY_DIR:STATIC=/home/pi/hexapod/ROS/build/web_control
+
+//Value Computed by CMake
+web_control_SOURCE_DIR:STATIC=/home/pi/hexapod/ROS/src/web_control
 
 //The directory containing a CMake configuration file for xmlrpcpp.
 xmlrpcpp_DIR:PATH=/opt/ros/indigo/share/xmlrpcpp/cmake
@@ -471,7 +489,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_LOCAL_GENERATORS:INTERNAL=4
+CMAKE_NUMBER_OF_LOCAL_GENERATORS:INTERNAL=7
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

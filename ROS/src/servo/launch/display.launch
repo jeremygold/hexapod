@@ -1,8 +1,11 @@
 <launch>
         <param name="robot_description" command="cat $(find servo)/urdf/servo.urdf" />
         <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
-        <node name="web_server" pkg="beginner_tutorials" type="pwm_web_control.py" />
-        <node name="state_publisher" pkg="servo" type="state_publisher.py" />
-        <node name="pwm_hal" pkg="beginner_tutorials" type="pwm_hal.py" />[
+
+        <node name="state_publisher" pkg="hexapod_controller" type="state_publisher.py" />
+        <node name="hexapod_controller" pkg="hexapod_controller" type="hexapod_controller.py" />
+
+        <node name="web_control" pkg="web_control" type="web_control.py" />
+        <node name="servo_driver" pkg="servo" type="servo_driver.py" />
 </launch>
 

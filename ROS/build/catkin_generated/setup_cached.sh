@@ -7,6 +7,4 @@
 # new environment variables
 
 # modified environment variables
-export CMAKE_PREFIX_PATH="/home/pi/hexapod/ROS/devel:$CMAKE_PREFIX_PATH"
 export PWD="/home/pi/hexapod/ROS/build"
-export ROS_PACKAGE_PATH="/home/pi/hexapod/ROS/src:$ROS_PACKAGE_PATH"
