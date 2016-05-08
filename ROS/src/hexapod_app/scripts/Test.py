@@ -3,8 +3,11 @@
 import rospy
 from time import sleep
 from Joint import Joint
+from Leg import Leg
+from numpy import arange
+import time
 
-delay = 0.3
+delay = 0.5
 
 def test_joint(joint):
     joint.set_joint_angle(20)
@@ -60,8 +63,11 @@ def init_joints():
     right_front_shin = Joint("/right/front/shin")
     right_mid_shin = Joint("/right/mid/shin")
     right_back_shin = Joint("/right/back/shin")
+    sleep(1)
 
 def test_joints():
+    init_joints()
+
     test_joint(left_front_hip)
     test_joint(left_mid_hip)
     test_joint(left_back_hip)
@@ -86,10 +92,46 @@ def test_joints():
     test_joint(right_mid_shin)
     test_joint(right_back_shin)
 
-if __name__ == '__main__':
-    rospy.init_node('hexapod_app_test', anonymous=True)
-    init_joints()
+def init_legs():
+    global left_front 
+    global left_mid 
+    global left_back 
+    global right_front 
+    global right_mid 
+    global right_back 
+
+    left_front = Leg("left", "front")
+    left_mid = Leg("left", "mid")
+    left_back = Leg("left", "back")
+    right_front = Leg("right", "front")
+    right_mid = Leg("right", "mid")
+    right_back = Leg("right", "back")
+
     sleep(1)
 
-    test_joints()
+def test_legs():
+    init_legs()
+    for angle in arange(-45, 45, 3):
+        left_front.set_leg_pos(angle, -20)
+        left_mid.set_leg_pos(angle, -20)
+        left_back.set_leg_pos(angle, -20)
+        right_front.set_leg_pos(angle, -20)
+        right_mid.set_leg_pos(angle, -20)
+        right_back.set_leg_pos(angle, -20)
+
+        time.sleep(0.05)
+
+    left_front.set_leg_pos(0, 0)
+    left_mid.set_leg_pos(0, 0)
+    left_back.set_leg_pos(0, 0)
+
+    right_front.set_leg_pos(0, 0)
+    right_mid.set_leg_pos(0, 0)
+    right_back.set_leg_pos(0, 0)
+
+if __name__ == '__main__':
+    rospy.init_node('hexapod_app_test', anonymous=True)
+
+    # test_joints()
+    test_legs()
 
