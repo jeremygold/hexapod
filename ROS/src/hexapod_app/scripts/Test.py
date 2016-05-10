@@ -6,6 +6,7 @@ from Joint import Joint
 from Leg import Leg
 from Robot import Robot
 from numpy import arange
+from PressupGait import PressupGait
 import time
 
 delay = 0.3
@@ -150,10 +151,26 @@ def test_robot_legs():
     robot.right_mid.set_leg_pos(0, 0)
     robot.right_back.set_leg_pos(0, 0)
 
+def test_gait():
+    robot = Robot()
+    robot.gait = PressupGait()
+
+    r = rospy.Rate(50)
+
+    for i in range(200):
+        robot.update()
+        r.sleep()
+
+    robot.center()
+
+
 if __name__ == '__main__':
     rospy.init_node('hexapod_app_test', anonymous=True)
 
     # test_joints()
     # test_legs()
-    test_robot_legs()
+    # test_robot_legs()
+    test_gait()
+
+
 

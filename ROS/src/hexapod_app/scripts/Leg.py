@@ -38,15 +38,13 @@ class Leg:
 
         self.set_shin_angle(int(result * 180 / pi))
 
-    def set_leg_pos(self, hip_angle, thigh_angle, shin_angle):
+    def set_leg_pos(self, hip_angle, thigh_angle, shin_angle=None):
         self.hip.set_joint_angle(hip_angle)
         self.thigh.set_joint_angle(thigh_angle)
-        self.shin.set_joint_angle(shin_angle)
-
-    def set_leg_pos(self, hip_angle, thigh_angle):
-        self.hip.set_joint_angle(hip_angle)
-        self.thigh.set_joint_angle(thigh_angle)
-        self.calc_shin_angle()
+        if shin_angle is None:
+            self.calc_shin_angle()
+        else:
+            self.shin.set_joint_angle(shin_angle)
 
     def set_hip_only(self, hip_angle):
         self.set_hip_angle(hip_angle)
