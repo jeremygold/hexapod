@@ -7,6 +7,7 @@ from Leg import Leg
 from Robot import Robot
 from numpy import arange
 from PressupGait import PressupGait
+from WalkGait import WalkGait
 import time
 
 delay = 0.3
@@ -151,13 +152,13 @@ def test_robot_legs():
     robot.right_mid.set_leg_pos(0, 0)
     robot.right_back.set_leg_pos(0, 0)
 
-def test_gait():
+def test_gait(gait, num_updates):
     robot = Robot()
-    robot.gait = PressupGait()
+    robot.gait = gait
+    robot.center()
 
     r = rospy.Rate(50)
-
-    for i in range(200):
+    for i in range(num_updates):
         robot.update()
         r.sleep()
 
@@ -170,7 +171,6 @@ if __name__ == '__main__':
     # test_joints()
     # test_legs()
     # test_robot_legs()
-    test_gait()
-
-
+    # test_gait(PressupGait(), 200)
+    test_gait(WalkGait(), 400)
 
