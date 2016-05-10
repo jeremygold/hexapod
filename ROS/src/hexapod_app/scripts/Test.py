@@ -4,6 +4,7 @@ import rospy
 from time import sleep
 from Joint import Joint
 from Leg import Leg
+from Robot import Robot
 from numpy import arange
 import time
 
@@ -129,9 +130,30 @@ def test_legs():
     right_mid.set_leg_pos(0, 0)
     right_back.set_leg_pos(0, 0)
 
+def test_robot_legs():
+    robot = Robot()
+    for angle in arange(-45, 45, 3):
+        robot.left_front.set_leg_pos(angle, -20)
+        robot.left_mid.set_leg_pos(angle, -20)
+        robot.left_back.set_leg_pos(angle, -20)
+        robot.right_front.set_leg_pos(angle, -20)
+        robot.right_mid.set_leg_pos(angle, -20)
+        robot.right_back.set_leg_pos(angle, -20)
+
+        time.sleep(0.05)
+
+    robot.left_front.set_leg_pos(0, 0)
+    robot.left_mid.set_leg_pos(0, 0)
+    robot.left_back.set_leg_pos(0, 0)
+
+    robot.right_front.set_leg_pos(0, 0)
+    robot.right_mid.set_leg_pos(0, 0)
+    robot.right_back.set_leg_pos(0, 0)
+
 if __name__ == '__main__':
     rospy.init_node('hexapod_app_test', anonymous=True)
 
-    test_joints()
-    test_legs()
+    # test_joints()
+    # test_legs()
+    test_robot_legs()
 
