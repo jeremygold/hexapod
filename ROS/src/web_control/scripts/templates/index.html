@@ -21,6 +21,18 @@ function setCenter() {
     document.getElementById("shin_slider").value = 0;
 }
 
+function idleGait() {
+    $.get("/gait?value=Idle", function(data) {
+        $('#current_gait').html(data);
+    });
+}
+
+function walkGait() {
+    $.get("/gait?value=Walk", function(data) {
+        $('#current_gait').html(data);
+    });
+}
+
 $(document).ready(function() {
     $("#hip_slider").on("input", function() {
         $.get("/hip?value="+ this.value, function(data) {
@@ -49,6 +61,7 @@ $(document).ready(function() {
     <h1>Hexapod Web Control</h1>
     <button onclick="setCenter()">Center all</button>
 
+
     <p>
 
     <table style="width:500px" border="1">
@@ -59,5 +72,9 @@ $(document).ready(function() {
         <tr><td>Thigh</td><td><input type="range" id="thigh_slider" class="slider-width" value="0" min="-50" max="90"></input></td><td><div id="thigh_position"></div></td></tr>
         <tr><td>Shin</td><td><input type="range" id="shin_slider" class="slider-width" value="0" min="-50" max="90"></input></td><td><div id="shin_position"></div></td></tr>
     </table>
+
+    <button onclick="idleGait()">Idle Gait</button>
+    <button onclick="walkGait()">Walk Gait</button>
+    <div id="current_gait"></div>
 </body>
 
