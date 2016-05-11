@@ -6,11 +6,14 @@ from time import sleep
 from Robot import Robot
 from IdleGait import IdleGait
 from WalkGait import WalkGait
+from WalkBackGait import WalkBackGait
 from PressupGait import PressupGait
 from TurnLeftGait import TurnLeftGait
 from TurnRightGait import TurnRightGait
 from CrabLeftGait import CrabLeftGait
 from CrabRightGait import CrabRightGait
+from ForwardRightGait import ForwardRightGait
+from ForwardLeftGait import ForwardLeftGait
 
 class HexapodApp:
     def __init__(self):
@@ -27,6 +30,15 @@ class HexapodApp:
 
         elif command == "Walk":
             self.robot.gait = WalkGait()
+
+        elif command == "WalkBack":
+            self.robot.gait = WalkBackGait()
+
+        elif command == "ForwardRight":
+            self.robot.gait = ForwardRightGait()
+
+        elif command == "ForwardLeft":
+            self.robot.gait = ForwardLeftGait()
 
         elif command == "Pressup":
             self.robot.gait = PressupGait()

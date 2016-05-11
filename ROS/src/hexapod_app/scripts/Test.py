@@ -8,10 +8,14 @@ from Robot import Robot
 from numpy import arange
 from PressupGait import PressupGait
 from WalkGait import WalkGait
+from WalkBackGait import WalkBackGait
 from TurnRightGait import TurnRightGait
 from TurnLeftGait import TurnLeftGait
 from CrabLeftGait import CrabLeftGait
 from CrabRightGait import CrabRightGait
+from ForwardRightGait import ForwardRightGait
+from ForwardLeftGait import ForwardLeftGait
+
 import time
 
 delay = 0.3
@@ -172,13 +176,16 @@ def test_gait(gait, num_updates):
 if __name__ == '__main__':
     rospy.init_node('hexapod_app_test', anonymous=True)
 
-    test_joints()
-    test_legs()
-    test_robot_legs()
-    test_gait(PressupGait(), 200)
-    test_gait(WalkGait(), 400)
-    test_gait(TurnRightGait(), 400)
-    test_gait(TurnLeftGait(), 400)
-    test_gait(CrabLeftGait(), 400)
-    test_gait(CrabRightGait(), 400)
+    # test_joints()
+    # test_legs()
+    # test_robot_legs()
+    # test_gait(PressupGait(), 200)
+    # test_gait(WalkGait(), 400)
+    # test_gait(WalkBackGait(), 400)
+    # test_gait(TurnRightGait(), 400)
+    # test_gait(TurnLeftGait(), 400)
+    # test_gait(CrabLeftGait(), 400)
+    # test_gait(CrabRightGait(), 400)
+    test_gait(ForwardLeftGait(), 400)
+    test_gait(ForwardRightGait(), 400)
 
