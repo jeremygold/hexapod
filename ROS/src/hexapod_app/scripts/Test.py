@@ -8,6 +8,8 @@ from Robot import Robot
 from numpy import arange
 from PressupGait import PressupGait
 from WalkGait import WalkGait
+from TurnRightGait import TurnRightGait
+from TurnLeftGait import TurnLeftGait
 import time
 
 delay = 0.3
@@ -172,5 +174,8 @@ if __name__ == '__main__':
     # test_legs()
     # test_robot_legs()
     # test_gait(PressupGait(), 200)
-    test_gait(WalkGait(), 400)
+    # test_gait(WalkGait(), 400)
+    # test_gait(TurnRightGait(), 400)
+    test_gait(TurnLeftGait(), 400)
+
 
