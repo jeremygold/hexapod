@@ -42,7 +42,7 @@ def setGait():
     value = request.args.get("value")
     rospy.loginfo("Setting Gait to '{0:s}'".format(value))
     gait_pub.publish(value)
-    return "Gait set to {0:s}".format(value)
+    return "Current Gait: {0:s}".format(value)
 
 def initRospy():
     global hip_pub

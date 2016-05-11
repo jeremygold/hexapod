@@ -21,14 +21,8 @@ function setCenter() {
     document.getElementById("shin_slider").value = 0;
 }
 
-function idleGait() {
-    $.get("/gait?value=Idle", function(data) {
-        $('#current_gait').html(data);
-    });
-}
-
-function walkGait() {
-    $.get("/gait?value=Walk", function(data) {
+function setGait(gait) {
+    $.get("/gait?value=" + gait, function(data) {
         $('#current_gait').html(data);
     });
 }
@@ -73,8 +67,10 @@ $(document).ready(function() {
         <tr><td>Shin</td><td><input type="range" id="shin_slider" class="slider-width" value="0" min="-50" max="90"></input></td><td><div id="shin_position"></div></td></tr>
     </table>
 
-    <button onclick="idleGait()">Idle Gait</button>
-    <button onclick="walkGait()">Walk Gait</button>
-    <div id="current_gait"></div>
+    <button onclick="setGait('Idle')">Idle Gait</button>
+    <button onclick="setGait('Walk')">Walk Gait</button>
+    <button onclick="setGait('Pressup')">Pressup Gait</button>
+    <p>
+    <div id="current_gait">Current Gait:</div>
 </body>
 
