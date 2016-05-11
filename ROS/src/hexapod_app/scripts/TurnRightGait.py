@@ -7,7 +7,7 @@ class TurnRightGait (Gait):
 	self.min_vert_angle = -20
         self.max_horiz_angle = 30
         self.min_horiz_angle = -30
-        self.vel = 1
+        self.vel = 3
 
     def update(self, robot):
 

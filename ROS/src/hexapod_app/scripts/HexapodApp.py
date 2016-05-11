@@ -7,6 +7,10 @@ from Robot import Robot
 from IdleGait import IdleGait
 from WalkGait import WalkGait
 from PressupGait import PressupGait
+from TurnLeftGait import TurnLeftGait
+from TurnRightGait import TurnRightGait
+from CrabLeftGait import CrabLeftGait
+from CrabRightGait import CrabRightGait
 
 class HexapodApp:
     def __init__(self):
@@ -26,6 +30,18 @@ class HexapodApp:
 
         elif command == "Pressup":
             self.robot.gait = PressupGait()
+
+        elif command == "TurnRight":
+            self.robot.gait = TurnRightGait()
+
+        elif command == "TurnLeft":
+            self.robot.gait = TurnLeftGait()
+
+        elif command == "CrabLeft":
+            self.robot.gait = CrabLeftGait()
+
+        elif command == "CrabRight":
+            self.robot.gait = CrabRightGait()
 
         else:
             self.robot.gait = IdleGait()
