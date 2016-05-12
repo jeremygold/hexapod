@@ -13,5 +13,5 @@ else
     export ROS_IP=192.168.1.128
 fi
 
-source ./devel/setup.zsh
+source /home/pi/hexapod/ROS/devel/setup.zsh
 
