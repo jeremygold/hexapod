@@ -1,6 +1,6 @@
 from Gait import Gait, LegState
 
-class TurnRightGait (Gait):
+class TurnLeftGait (Gait):
     def __init__(self):
         Gait.__init__(self)
 	self.max_vert_angle = 20
@@ -38,10 +38,10 @@ class TurnRightGait (Gait):
         else:
             self.leg_state = LegState.going_up;
 
-        robot.left_front.set_leg_pos( self.horiz_angle, -self.vert_angle)
-        robot.left_mid.set_leg_pos( -self.horiz_angle, self.vert_angle)
-        robot.left_back.set_leg_pos( self.horiz_angle, -self.vert_angle)
-        robot.right_front.set_leg_pos( self.horiz_angle, self.vert_angle)
-        robot.right_mid.set_leg_pos( -self.horiz_angle, -self.vert_angle)
-        robot.right_back.set_leg_pos( self.horiz_angle, self.vert_angle)
+        robot.left_front.set_leg_pos( -self.horiz_angle, -self.vert_angle)
+        robot.left_mid.set_leg_pos( self.horiz_angle, self.vert_angle)
+        robot.left_back.set_leg_pos( -self.horiz_angle, -self.vert_angle)
+        robot.right_front.set_leg_pos( -self.horiz_angle, self.vert_angle)
+        robot.right_mid.set_leg_pos( self.horiz_angle, -self.vert_angle)
+        robot.right_back.set_leg_pos( -self.horiz_angle, self.vert_angle)
 
