@@ -1,6 +1,6 @@
 from Gait import Gait, LegState
 
-class TurnLeftGait (Gait):
+class TurnRightGait (Gait):
     def __init__(self):
         Gait.__init__(self)
 	self.max_vert_angle = 20
