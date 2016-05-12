@@ -1,0 +1,5 @@
+<launch>
+    <include file="$(find hexapod_controller)/launch/hexapod_controller.launch"/>
+    <node name="hexapod_app" pkg="hexapod_app" type="HexapodApp.py" />
+</launch>
+
