@@ -2,6 +2,7 @@
 
 import rospy
 from std_msgs.msg import Int16
+from std_msgs.msg import String
 from signal import signal,SIGINT
 import sys
 
@@ -36,15 +37,24 @@ def setShin():
     shin_pub.publish(value)
     return "Shin value {0:d}".format(value)
 
+@app.route("/gait")
+def setGait():
+    value = request.args.get("value")
+    rospy.loginfo("Setting Gait to '{0:s}'".format(value))
+    gait_pub.publish(value)
+    return "Current Gait: {0:s}".format(value)
+
 def initRospy():
     global hip_pub
     global thigh_pub
     global shin_pub
+    global gait_pub
     rospy.init_node('web_control', anonymous=True)
 
     hip_pub = rospy.Publisher('/left/front/hip/command', Int16, queue_size=10)
     thigh_pub = rospy.Publisher('/left/front/thigh/command', Int16, queue_size=10)
     shin_pub = rospy.Publisher('/left/front/shin/command', Int16, queue_size=10)
+    gait_pub = rospy.Publisher('/gait_command', String, queue_size=10)
 
 def sigintHandler(signal, frame):
     rospy.loginfo("Terminating webserver")

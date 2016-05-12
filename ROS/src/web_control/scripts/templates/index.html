@@ -5,59 +5,41 @@
 
     <script>
 
-function setCenter() {
-    $.get("/hip?value=0", function(data) {
-        $('#hip_position').html(data);
+function setGait(gait) {
+    $.get("/gait?value=" + gait, function(data) {
+        $('#current_gait').html(data);
     });
-    $.get("/thigh?value=0", function(data) {
-        $('#thigh_position').html(data);
-    });
-    $.get("/shin?value=0", function(data) {
-        $('#shin_position').html(data);
-    });
-
-    document.getElementById("hip_slider").value = 0;
-    document.getElementById("thigh_slider").value = 0;
-    document.getElementById("shin_slider").value = 0;
 }
-
-$(document).ready(function() {
-    $("#hip_slider").on("input", function() {
-        $.get("/hip?value="+ this.value, function(data) {
-            $('#hip_position').html(data);
-        });
-    });
-    $("#thigh_slider").on("input", function() {
-        $.get("/thigh?value="+ this.value, function(data) {
-            $('#thigh_position').html(data);
-        });
-    });
-    $("#shin_slider").on("input", function() {
-        $.get("/shin?value="+ this.value, function(data) {
-            $('#shin_position').html(data);
-        });
-    });
-
-    setCenter();
-});
-
     </script>
 
 </head>
 <body>
     <title>Hexapod Web Control</title>
-    <h1>Hexapod Web Control</h1>
-    <button onclick="setCenter()">Center all</button>
 
-    <p>
-
-    <table style="width:500px" border="1">
-        <col width=50px>
-        <col width=320px>
-
-        <tr><td>Hip</td><td><input type="range" id="hip_slider" class="slider-width" value="0" min="-55" max="55"></input></td><td><div id="hip_position"></div></td></tr>
-        <tr><td>Thigh</td><td><input type="range" id="thigh_slider" class="slider-width" value="0" min="-50" max="90"></input></td><td><div id="thigh_position"></div></td></tr>
-        <tr><td>Shin</td><td><input type="range" id="shin_slider" class="slider-width" value="0" min="-50" max="90"></input></td><td><div id="shin_position"></div></td></tr>
+    <table style="width:300px" border="0">
+        <tr><td colspan="3"><center><h1>Hexapod Web Control</h1></center></td></tr>
+        <tr>
+            <td><button class="button button_size" onclick="setGait('ForwardLeft')">Forward Left</button></td>
+            <td><button class="button button_size" onclick="setGait('Walk')">Walk</button></td>
+            <td><button class="button button_size" onclick="setGait('ForwardRight')">Forward Right</button></td>
+        </tr>
+        <tr>
+            <td><button class="button button_size" onclick="setGait('TurnLeft')">Turn Left</button></td>
+            <td><button class="button button_size" onclick="setGait('Idle')">Idle</button></td>
+            <td><button class="button button_size" onclick="setGait('TurnRight')">Turn Right</button></td>
+        </tr>
+        <tr>
+            <td><button class="button button_size" onclick="setGait('CrabLeft')">Crab Left</button></td>
+            <td><button class="button button_size" onclick="setGait('WalkBack')">Walk Back</button></td>
+            <td><button class="button button_size" onclick="setGait('CrabRight')">Crab Right</button></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><button class="button button_size" onclick="setGait('Pressup')">Pressup</button></td>
+            <td></td>
+        </tr>
     </table>
+    <p>
+    <div id="current_gait">Current Gait:</div>
 </body>
 
