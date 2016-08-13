@@ -1,8 +1,0 @@
-prefix=/home/pi/hexapod/ROS/devel
-
-Name: servo
-Description: Description of servo
-Version: 0.0.0
-Cflags: 
-Libs: -L/home/pi/hexapod/ROS/devel/lib 
-Requires: 

@@ -1,8 +1,0 @@
-prefix=/home/pi/hexapod/ROS/install
-
-Name: hexapod_app
-Description: Description of hexapod_app
-Version: 0.0.0
-Cflags: 
-Libs: -L/home/pi/hexapod/ROS/install/lib 
-Requires: 

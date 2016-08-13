@@ -2,4 +2,7 @@
 .DS_Store
 *.pyc
 
+build/
+devel/
+src/CMakeLists.txt
 
