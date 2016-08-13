@@ -17,8 +17,9 @@ class Servo:
         # Compensate for 500us - 2500us representing +/- 90 degrees, and ServoBlaster is in units of 10us
         pwm_delay = 150 + (self.angle * 100 / 90)
 
-        # Send to PWM output
-        servo_command = "%u=%u\n" % (self.number, pwm_delay)
-        with open("/dev/servoblaster", "wb") as servo_device:
-            servo_device.write(servo_command)
+        if os.path.exists("/dev/servoblaster"):
+            # Send to PWM output
+            servo_command = "%u=%u\n" % (self.number, pwm_delay)
+            with open("/dev/servoblaster", "wb") as servo_device:
+                servo_device.write(servo_command)
 

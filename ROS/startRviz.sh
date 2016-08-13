@@ -1,4 +1,4 @@
 #!/bin/bash
 
-rosrun rviz rviz -d /pub/research/ros/PubSubToRpi/src/servo/rviz/servo.rviz
+rosrun rviz rviz -d /pub/projects/hexapod/ROS/src/servo/rviz/servo.rviz
 
