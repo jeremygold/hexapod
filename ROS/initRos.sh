@@ -13,7 +13,7 @@ then
     export ROS_MASTER_URI=http://Cappuccino:11311
     source /pub/projects/hexapod/ROS/devel/setup.zsh
 else
-    export ROS_IP=192.168.1.128
+    export ROS_IP=192.168.1.117
     source /home/pi/hexapod/ROS/devel/setup.zsh
 fi
 
