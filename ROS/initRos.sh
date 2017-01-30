@@ -14,13 +14,14 @@ case `hostname` in
         ;;
 
     Cappuccino)
+        echo "Configuring on Cappucino"
         export ROS_IP=192.168.1.107
         source /pub/projects/hexapod/ROS/devel/setup.zsh
         ;;
     *)
-        export ROS_IP=192.168.1.117
+        echo "Configuring on HexapodPi"
+        export ROS_IP=192.168.2.125
         source /home/pi/hexapod/ROS/devel/setup.zsh
         ;;
 esac
-
 
