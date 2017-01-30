@@ -1,0 +1,30 @@
+#! /bin/sh
+# /etc/init.d/hexapod_ros 
+
+### BEGIN INIT INFO
+# Provides:          hexapod_ros 
+# Required-Start:    $syslog
+# Required-Stop:     $syslog
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Startup script for Hexapod ROS services
+# Description:       A simple script for the Hexapod project that will start / stop the ROS web service
+### END INIT INFO
+
+case "$1" in
+  start)
+    echo "Starting Hexapod ROS services"
+    /home/pi/hexapod/Rpi/StartupScripts/HexapodRosTmux.sh
+    ;;
+  stop)
+    echo "Stopping Hexapod ROS services"
+    /usr/bin/tmux kill-session
+    ;;
+  *)
+    echo "Usage: /etc/init.d/hexapod_ros {start|stop}"
+    exit 1
+    ;;
+esac
+
+exit 0
+
