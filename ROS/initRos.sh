@@ -1,27 +1,33 @@
 #!/bin/zsh
 
+echo
+echo "##### initRos.sh Starting #####"
+
 # Master is running on HexapodPi
 # export ROS_MASTER_URI=http://HexapodPi:11311
 #
 # Master is running on current host
-export ROS_MASTER_URI=http://`hostname`:11311
+export LOCAL_IP=`hostname -I | tr -d '[:space:]'`
+export ROS_MASTER_URI=http://$LOCAL_IP:11311
+export ROS_IP=$LOCAL_IP
 
-# Note: ROS_IP is this hosts IP address
+echo "ROS_IP =" $ROS_IP
+echo "ROS_MASTER_URI =" $ROS_MASTER_URI
+echo "Configuring on" `hostname`
+
 case `hostname` in 
     ubuntu-vbox)
-        export ROS_IP=10.0.2.15
         source /pub/projects/hexapod/ROS/devel/setup.zsh
         ;;
 
     Cappuccino)
-        echo "Configuring on Cappucino"
-        export ROS_IP=192.168.1.107
         source /pub/projects/hexapod/ROS/devel/setup.zsh
         ;;
     *)
-        echo "Configuring on HexapodPi"
-        export ROS_IP=192.168.2.125
         source /home/pi/hexapod/ROS/devel/setup.zsh
         ;;
 esac
+
+echo "##### initRos.sh Done #####"
+echo
 
